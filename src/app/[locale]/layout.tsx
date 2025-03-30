@@ -10,7 +10,7 @@ export default async function LocaleLayout({
   let messages;
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     // Default to English if the requested locale is not available
     messages = (await import(`../../../messages/en.json`)).default;
   }
