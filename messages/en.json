@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Premium Silk Duvets & Comforters",
+    "subtitle": "Experience the luxury of natural silk for a better night's sleep",
+    "cta": "Shop Now"
+  },
+  "featured": {
+    "title": "Featured Products",
+    "viewAll": "View All"
+  },
+  "benefits": {
+    "title": "Why Choose Silk?",
+    "comfort": {
+      "title": "Ultimate Comfort",
+      "description": "Silk provides unmatched softness and comfort for your best sleep"
+    },
+    "temperature": {
+      "title": "Temperature Regulating",
+      "description": "Naturally keeps you cool in summer and warm in winter"
+    },
+    "hypoallergenic": {
+      "title": "Hypoallergenic",
+      "description": "Perfect for sensitive skin and allergy sufferers"
+    },
+    "durable": {
+      "title": "Long Lasting",
+      "description": "High-quality silk lasts for years with proper care"
+    }
+  },
+  "footer": {
+    "subscribe": "Subscribe to our newsletter",
+    "subscribeButton": "Subscribe",
+    "copyright": "© 2024 Taihu Silk. All rights reserved.",
+    "shipping": "Free shipping on orders over $150",
+    "returns": "Easy 30-day returns",
+    "support": "24/7 Customer support"
+  }
+}

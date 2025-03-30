@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Premium Seidenbettdecken & Daunendecken",
+    "subtitle": "Erleben Sie den Luxus natürlicher Seide für einen besseren Schlaf",
+    "cta": "Jetzt einkaufen"
+  },
+  "featured": {
+    "title": "Ausgewählte Produkte",
+    "viewAll": "Alle anzeigen"
+  },
+  "benefits": {
+    "title": "Warum Seide wählen?",
+    "comfort": {
+      "title": "Ultimativer Komfort",
+      "description": "Seide bietet unvergleichliche Weichheit und Komfort für Ihren besten Schlaf"
+    },
+    "temperature": {
+      "title": "Temperaturregulierend",
+      "description": "Hält Sie im Sommer natürlich kühl und im Winter warm"
+    },
+    "hypoallergenic": {
+      "title": "Hypoallergen",
+      "description": "Perfekt für empfindliche Haut und Allergiker"
+    },
+    "durable": {
+      "title": "Langlebig",
+      "description": "Hochwertige Seide hält bei richtiger Pflege jahrelang"
+    }
+  },
+  "footer": {
+    "subscribe": "Abonnieren Sie unseren Newsletter",
+    "subscribeButton": "Abonnieren",
+    "copyright": "© 2024 Taihu Seide. Alle Rechte vorbehalten.",
+    "shipping": "Kostenloser Versand bei Bestellungen über 150€",
+    "returns": "Einfache 30-Tage Rückgabe",
+    "support": "24/7 Kundensupport"
+  }
+}

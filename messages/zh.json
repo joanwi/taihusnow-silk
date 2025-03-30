@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "home": "首页",
+    "products": "产品",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "blog": "博客"
+  },
+  "hero": {
+    "title": "优质蚕丝被与丝绵被",
+    "subtitle": "体验天然蚕丝带来的奢华睡眠体验",
+    "cta": "立即购买"
+  },
+  "featured": {
+    "title": "精选产品",
+    "viewAll": "查看全部"
+  },
+  "benefits": {
+    "title": "为什么选择蚕丝?",
+    "comfort": {
+      "title": "极致舒适",
+      "description": "蚕丝提供无与伦比的柔软度和舒适度，带来最佳睡眠体验"
+    },
+    "temperature": {
+      "title": "温度调节",
+      "description": "自然地在夏季保持凉爽，冬季保持温暖"
+    },
+    "hypoallergenic": {
+      "title": "低过敏性",
+      "description": "适合敏感肌肤和过敏体质者"
+    },
+    "durable": {
+      "title": "持久耐用",
+      "description": "高品质蚕丝在正确护理下可使用多年"
+    }
+  },
+  "footer": {
+    "subscribe": "订阅我们的新闻简报",
+    "subscribeButton": "订阅",
+    "copyright": "© 2024 太湖丝绸。保留所有权利。",
+    "shipping": "订单满150美元免费送货",
+    "returns": "30天轻松退货",
+    "support": "24/7客户支持"
+  }
+}
