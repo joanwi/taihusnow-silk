@@ -9,7 +9,16 @@
   "hero": {
     "title": "优质蚕丝被与丝绵被",
     "subtitle": "体验天然蚕丝带来的奢华睡眠体验",
-    "cta": "立即购买"
+    "cta": "立即购买",
+    "slide1Title": "优质蚕丝被",
+    "slide1Subtitle": "无与伦比的奢华与舒适，带来完美的睡眠体验",
+    "slide1Cta": "探索系列",
+    "slide2Title": "纯桑蚕丝",
+    "slide2Subtitle": "温度调节、低过敏性，天然美丽",
+    "slide2Cta": "立即选购",
+    "slide3Title": "四季舒适",
+    "slide3Subtitle": "完美重量与透气性，全年享受奢华体验",
+    "slide3Cta": "查看产品"
   },
   "featured": {
     "title": "精选产品",

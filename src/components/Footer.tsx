@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Button } from './ui/button';
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Taihu Silk</h3>
             <p className="text-gray-400 mb-4">
-              Premium silk bedding products for the best night\'s sleep you\'ve ever experienced.
+              Premium silk bedding products for the best nights sleep youve ever experienced.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">

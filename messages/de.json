@@ -9,7 +9,16 @@
   "hero": {
     "title": "Premium Seidenbettdecken & Daunendecken",
     "subtitle": "Erleben Sie den Luxus natürlicher Seide für einen besseren Schlaf",
-    "cta": "Jetzt einkaufen"
+    "cta": "Jetzt einkaufen",
+    "slide1Title": "Premium Seidenbettdecken",
+    "slide1Subtitle": "Unvergleichlicher Luxus und Komfort für einen perfekten Schlaf",
+    "slide1Cta": "Kollektion entdecken",
+    "slide2Title": "Reine Maulbeerseide",
+    "slide2Subtitle": "Temperaturregulierend, hypoallergen und natürlich schön",
+    "slide2Cta": "Jetzt kaufen",
+    "slide3Title": "Ganzjahreskomfort",
+    "slide3Subtitle": "Perfektes Gewicht und Atmungsaktivität für ganzjährigen Luxus",
+    "slide3Cta": "Produkte ansehen"
   },
   "featured": {
     "title": "Ausgewählte Produkte",

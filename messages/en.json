@@ -2,14 +2,36 @@
   "navigation": {
     "home": "Home",
     "products": "Products",
-    "about": "About Us",
+    "about": "About",
     "contact": "Contact",
     "blog": "Blog"
+  },
+  "categories": {
+    "title": "Customizable Silk Product Categories",
+    "silkPillowcase": "Silk Pillowcase",
+    "silkPillowcaseDescription": "Experience luxury sleep with our premium silk pillowcases",
+    "silkEyeMask": "Silk Eye Mask",
+    "silkEyeMaskDescription": "Block light completely with soft silk eye masks",
+    "silkBonnet": "Silk Bonnet",
+    "silkBonnetDescription": "Protect your hair with our delicate silk bonnets",
+    "silkAccessories": "Silk Accessories",
+    "silkAccessoriesDescription": "Complete your silk collection with our accessories",
+    "silkScrunchies": "Silk Scrunchies",
+    "silkScrunchiesDescription": "Gentle hair ties made from pure silk"
   },
   "hero": {
     "title": "Premium Silk Duvets & Comforters",
     "subtitle": "Experience the luxury of natural silk for a better night's sleep",
-    "cta": "Shop Now"
+    "cta": "Shop Now",
+    "slide1Title": "Premium Silk Duvets",
+    "slide1Subtitle": "Unmatched luxury and comfort for a perfect night's sleep",
+    "slide1Cta": "Explore Collection",
+    "slide2Title": "Pure Mulberry Silk",
+    "slide2Subtitle": "Temperature regulating, hypoallergenic, and naturally beautiful",
+    "slide2Cta": "Shop Now",
+    "slide3Title": "All Season Comfort",
+    "slide3Subtitle": "Perfect weight and breathability for year-round luxury",
+    "slide3Cta": "View Products"
   },
   "featured": {
     "title": "Featured Products",
