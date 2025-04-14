@@ -4,18 +4,26 @@ import { notFound } from 'next/navigation';
 import { ContactForm } from '@/components/ContactForm';
 import { ChevronRight, Home } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
-type PageProps = {
-  params: { slug: string; locale: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+export async function generateStaticParams() {
+  return products.flatMap((product) =>
+    routing.locales.map((locale) => ({
+      slug: product.slug,
+      locale,
+    }))
+  );
+}
 
-export default function ProductDetailPage({ params }: PageProps) {
-  const { slug, locale } = params;
-  const t = useTranslations('products');
-  const product = products.find((p) => p.slug === params.slug);
-  
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const t = await getTranslations('products');
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
