@@ -1,0 +1,60 @@
+# Directory Structure of Taihu Silk Project
+
+# Root directory containing all project files
+taihu-silk/
+├── .next/                 # Next.js build output directory
+├── .git/                  # Git version control directory
+├── node_modules/          # Node.js dependencies
+├── public/                # Static files directory
+│   ├── images/           # Image assets
+│   ├── next.svg          # Next.js logo
+│   └── file.svg          # File icon
+├── src/                  # Source code directory
+│   ├── app/              # Next.js App Router directory
+│   │   ├── [locale]/     # Internationalized routes
+│   │   │   ├── product/  # Product-related pages
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx  # Home page
+│   │   │   └── layout.tsx # Layout for locale routes
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   ├── page.tsx      # Root page
+│   │   └── favicon.ico   # Website icon
+│   ├── components/       # Reusable components
+│   │   ├── ui/          # UI components
+│   │   │   └── button.tsx # Button component
+│   │   ├── Navbar.tsx   # Navigation bar
+│   │   ├── CategoryGrid.tsx # Product category grid
+│   │   ├── HeroCarousel.tsx # Hero section carousel
+│   │   ├── LanguageSwitcher.tsx # Language selection
+│   │   ├── FeaturedProducts.tsx # Featured products section
+│   │   ├── Footer.tsx   # Page footer
+│   │   └── BenefitsSection.tsx # Benefits showcase
+│   ├── i18n/            # Internationalization
+│   │   ├── request.ts   # i18n request handling
+│   │   ├── routing.ts   # i18n routing configuration
+│   │   └── navigation.ts # i18n navigation helpers
+│   ├── lib/             # Utility functions
+│   │   └── utils.ts     # Common utilities
+│   └── middleware.ts    # Next.js middleware
+├── messages/            # Translation files
+│   ├── en.json         # English translations
+│   ├── de.json         # German translations
+│   └── zh.json         # Chinese translations
+├── .gitignore          # Git ignore rules
+├── components.json     # Component configuration
+├── eslint.config.mjs   # ESLint configuration
+├── next.config.ts      # Next.js configuration
+├── next-env.d.ts       # Next.js TypeScript declarations
+├── package.json        # Project dependencies
+├── package-lock.json   # Dependency lock file
+├── postcss.config.mjs  # PostCSS configuration
+└── tsconfig.json       # TypeScript configuration
+
+# Project Features:
+# - Built with Next.js and TypeScript
+# - Internationalization support (i18n)
+# - App Router architecture
+# - Reusable components
+# - Tailwind CSS styling
+# - Internationalized routing 

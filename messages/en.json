@@ -59,9 +59,41 @@
   "footer": {
     "subscribe": "Subscribe to our newsletter",
     "subscribeButton": "Subscribe",
-    "copyright": "© 2024 Taihu Silk. All rights reserved.",
+    "copyright": "© 2025 Taihu Silk. All rights reserved.",
     "shipping": "Free shipping on orders over $150",
     "returns": "Easy 30-day returns",
     "support": "24/7 Customer support"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Discover our premium collection of silk products",
+    "items": "items",
+    "view": "View Collection",
+    "pure": "Pure Silk",
+    "pure_desc": "All our products are made from 100% pure silk",
+    "clients": "Happy Clients",
+    "clients_desc": "Serving over 500 satisfied customers worldwide",
+    "years": "Years Experience",
+    "years_desc": "Over a decade of excellence in silk production",
+    "cta_title": "Ready to Start Your Silk Journey?",
+    "cta_desc": "Contact us today to discuss your requirements and discover our exclusive collections",
+    "contact": "Contact Us",
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "filter": {
+      "all": "All Products",
+      "allSeason": "All-Season",
+      "winter": "Winter",
+      "summer": "Summer",
+      "hotel": "Hotel Collection",
+      "organic": "Organic",
+      "children": "Children's",
+      "bestSelling": "Best Selling",
+      "newest": "Newest",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low"
+    }
   }
 }

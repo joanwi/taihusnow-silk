@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <HeroCarousel />
       <CategoryGrid />
       <FeaturedProducts />
       <BenefitsSection />
-    </main>
+    </div>
   );
 } 

@@ -9,21 +9,3 @@ export const config = {
   // - … the ones containing a dot (e.g. `favicon.ico`)
   matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
 };
-
-
-// import createMiddleware from 'next-intl/middleware';
-// import { locales, defaultLocale } from '../i18n';
-
-// export default createMiddleware({
-//   defaultLocale,
-//   locales,
-//   localePrefix: 'as-needed',
-//   localeDetection: false
-// });
-
-// export const config = {
-//   matcher: [
-//     '/((?!api|_next|_vercel|.*\\..*).*)',
-//     '/'
-//   ]
-// }; 

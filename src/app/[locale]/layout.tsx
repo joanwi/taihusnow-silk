@@ -30,7 +30,7 @@ export default async function LocaleLayout({
       <body className={`${inter.className} min-h-screen bg-gray-50 flex flex-col`}>
         <NextIntlClientProvider>
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow flex flex-col">
             {children}
           </main>
           <Footer />
