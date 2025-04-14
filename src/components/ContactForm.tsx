@@ -11,6 +11,8 @@ export function ContactForm({ productName }: ContactFormProps) {
     name: '',
     email: '',
     phone: '',
+    company: '',
+    inquiryType: '',
     message: '',
   });
 
@@ -20,7 +22,7 @@ export function ContactForm({ productName }: ContactFormProps) {
     console.log('Form submitted:', { ...formData, productName });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -29,7 +31,7 @@ export function ContactForm({ productName }: ContactFormProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-          姓名
+          Full Name *
         </label>
         <input
           type="text"
@@ -44,7 +46,7 @@ export function ContactForm({ productName }: ContactFormProps) {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-          邮箱
+          Email Address *
         </label>
         <input
           type="email"
@@ -59,7 +61,7 @@ export function ContactForm({ productName }: ContactFormProps) {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-          电话
+          Phone Number
         </label>
         <input
           type="tel"
@@ -67,14 +69,47 @@ export function ContactForm({ productName }: ContactFormProps) {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
         />
       </div>
 
       <div>
+        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+          Company Name
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700">
+          Inquiry Type *
+        </label>
+        <select
+          id="inquiryType"
+          name="inquiryType"
+          value={formData.inquiryType}
+          onChange={handleChange}
+          required
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        >
+          <option value="">Select an option</option>
+          <option value="general">General Inquiry</option>
+          <option value="sales">Sales Inquiry</option>
+          <option value="support">Technical Support</option>
+          <option value="wholesale">Wholesale Inquiry</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-          留言
+          Your Message *
         </label>
         <textarea
           id="message"
@@ -82,16 +117,16 @@ export function ContactForm({ productName }: ContactFormProps) {
           value={formData.message}
           onChange={handleChange}
           rows={4}
+          required
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-          placeholder={`我想了解更多关于 ${productName} 的信息...`}
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
-        提交询价
+        Send Message
       </button>
     </form>
   );
