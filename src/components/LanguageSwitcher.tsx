@@ -30,7 +30,6 @@ export default function LanguageSwitcher({ scrolled = false }: LanguageSwitcherP
       >
         <option value="en" className="bg-gray-800 text-white">English</option>
         <option value="zh" className="bg-gray-800 text-white">简体中文</option>
-        <option value="de" className="bg-gray-800 text-white">Deutsch</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
         <svg className={`h-4 w-4 ${scrolled ? 'text-gray-800' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

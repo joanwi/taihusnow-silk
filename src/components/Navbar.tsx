@@ -5,6 +5,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import DropdownMenu from './DropdownMenu';
 
 export default function Navbar() {
   const t = useTranslations('navigation');
@@ -50,6 +51,21 @@ export default function Navbar() {
     return hasDarkHero ? 'text-white hover:text-gray-200' : 'text-gray-600 hover:text-gray-900';
   };
 
+  const productItems = [
+    { label: 'All Products', href: '/products' },
+    { label: 'Winter', href: '/winter' },
+    { label: 'B', href: '/products/b' },
+    { label: 'C', href: '/products/c' },
+  ];
+
+  const supportItems = [
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Manufacturing', href: '/manufacturing' },
+    { label: 'Quality Control', href: '/quality-control' },
+    { label: 'Certifications', href: '/certifications' },
+    { label: 'Wholesale', href: '/wholesale' },
+  ];
+
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${getNavbarStyle()}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,12 +80,16 @@ export default function Navbar() {
             <Link href="/" className={`transition-colors ${getLinkColor()}`}>
               {t('home')}
             </Link>
-            <Link href="/products" className={`transition-colors ${getLinkColor()}`}>
-              {t('products')}
-            </Link>
-            <Link href="#" className={`transition-colors ${getLinkColor()}`}>
-              {t('about')}
-            </Link>
+            <DropdownMenu
+              label={t('products')}
+              items={productItems}
+              linkColor={getLinkColor()}
+            />
+            <DropdownMenu
+              label="Support"
+              items={supportItems}
+              linkColor={getLinkColor()}
+            />
             <Link href="/contact" className={`transition-colors ${getLinkColor()}`}>
               {t('contact')}
             </Link>

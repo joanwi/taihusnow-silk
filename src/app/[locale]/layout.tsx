@@ -3,6 +3,7 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ContactWidget from '@/components/ContactWidget';
 import '../globals.css';
 import { Inter } from 'next/font/google';
 
@@ -28,12 +29,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`${inter.className} min-h-screen bg-gray-50 flex flex-col`}>
+      <head>
+        <meta name="robots" content="noindex" />
+      </head>
         <NextIntlClientProvider>
-          <Navbar />
-          <main className="flex-grow flex flex-col">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow flex flex-col">
+              {children}
+            </main>
+            <Footer />
+            <ContactWidget />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
