@@ -2,18 +2,19 @@
 
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import DropdownMenu from './DropdownMenu';
+import { routing } from '@/i18n/routing';
 
 export default function Navbar() {
   const t = useTranslations('navigation');
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // 判断页面是否有深色背景的 hero 部分
-  const hasDarkHero = ['/', '/products', '/contact'].includes(pathname);
+  // 判断是否在首页（支持多语言路径）
+  const isHomePage = routing.locales.some(locale => pathname === `/${locale}`) || pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,26 +30,26 @@ export default function Navbar() {
 
   // 导航栏样式逻辑
   const getNavbarStyle = () => {
-    if (scrolled) {
-      return 'bg-white shadow-md';
+    if (isHomePage && !scrolled) {
+      return 'bg-transparent';
     }
-    return hasDarkHero ? 'bg-transparent' : 'bg-white shadow-md';
+    return 'bg-white shadow-md';
   };
 
   // 文字颜色逻辑
   const getTextColor = () => {
-    if (scrolled) {
-      return 'text-gray-900';
+    if (isHomePage && !scrolled) {
+      return 'text-white';
     }
-    return hasDarkHero ? 'text-white' : 'text-gray-900';
+    return 'text-gray-900';
   };
 
   // 链接颜色逻辑
   const getLinkColor = () => {
-    if (scrolled) {
-      return 'text-gray-600 hover:text-gray-900';
+    if (isHomePage && !scrolled) {
+      return 'text-white hover:text-gray-200';
     }
-    return hasDarkHero ? 'text-white hover:text-gray-200' : 'text-gray-600 hover:text-gray-900';
+    return 'text-gray-600 hover:text-gray-900';
   };
 
   const productItems = [
@@ -76,6 +77,7 @@ export default function Navbar() {
             </Link>
           </div>
           
+          {/* 桌面端导航 */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/" className={`transition-colors ${getLinkColor()}`}>
               {t('home')}
@@ -99,21 +101,91 @@ export default function Navbar() {
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher scrolled={scrolled || !hasDarkHero} />
+            <LanguageSwitcher scrolled={scrolled || !isHomePage} />
           </div>
           
+          {/* 移动端菜单按钮 */}
           <div className="md:hidden">
-            <button className={`p-2 rounded-md ${
-              scrolled || !hasDarkHero
-                ? 'text-gray-500 hover:text-gray-900 hover:bg-gray-100' 
-                : 'text-white hover:text-gray-200 hover:bg-white/10'
-            }`}>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-2 rounded-md ${
+                scrolled || !isHomePage
+                  ? 'text-gray-500 hover:text-gray-900 hover:bg-gray-100' 
+                  : 'text-white hover:text-gray-200 hover:bg-white/10'
+              }`}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
         </div>
+
+        {/* 移动端下拉菜单 */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-16 w-full bg-white shadow-lg rounded-b-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                href="/"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${getLinkColor()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('home')}
+              </Link>
+              <div className="px-3 py-2">
+                <div className={`text-base font-medium ${getLinkColor()}`}>
+                  {t('products')}
+                </div>
+                <div className="mt-2 space-y-1">
+                  {productItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block px-3 py-2 rounded-md text-sm ${getLinkColor()}`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="px-3 py-2">
+                <div className={`text-base font-medium ${getLinkColor()}`}>
+                  Support
+                </div>
+                <div className="mt-2 space-y-1">
+                  {supportItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block px-3 py-2 rounded-md text-sm ${getLinkColor()}`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/contact"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${getLinkColor()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('contact')}
+              </Link>
+              <Link
+                href="#"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${getLinkColor()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('blog')}
+              </Link>
+              <div className="px-3 py-2">
+                <LanguageSwitcher scrolled={scrolled || !isHomePage} />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
