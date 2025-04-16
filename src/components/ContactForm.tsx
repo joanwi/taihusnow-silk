@@ -87,26 +87,6 @@ export function ContactForm({ productName }: ContactFormProps) {
         />
       </div>
 
-      <div className="flex items-center gap-4">
-        <label htmlFor="inquiryType" className="w-24 text-sm font-medium text-gray-700">
-          Inquiry Type *
-        </label>
-        <select
-          id="inquiryType"
-          name="inquiryType"
-          value={formData.inquiryType}
-          onChange={handleChange}
-          required
-          className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-        >
-          <option value="">Select an option</option>
-          <option value="general">General Inquiry</option>
-          <option value="sales">Sales Inquiry</option>
-          <option value="support">Technical Support</option>
-          <option value="wholesale">Wholesale Inquiry</option>
-        </select>
-      </div>
-
       <div className="flex gap-4">
         <label htmlFor="message" className="w-24 text-sm font-medium text-gray-700 pt-2">
           Your Message *

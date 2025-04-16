@@ -17,9 +17,10 @@ export default function Navbar() {
     { label: 'C', href: '/products/c' },
   ];
 
-  const supportItems = [
+  const howtoItems = [
+    { label: 'Manufacturing', href: '/manufacturing' },
+    { label: 'Quality Control', href: '/quality-control' },
     { label: 'Certifications', href: '/certifications' },
-    { label: 'Wholesale', href: '/wholesale' },
   ];
 
   return (
@@ -43,9 +44,11 @@ export default function Navbar() {
               items={productItems}
               linkColor="text-gray-600 hover:text-gray-900"
             />
-            <Link href="/manufacturing" className="text-gray-600 hover:text-gray-900 transition-colors">Manufacturing</Link>
-            <Link href="/quality-control" className="text-gray-600 hover:text-gray-900 transition-colors">Quality Control</Link>
-            <Link href="/certifications" className="text-gray-600 hover:text-gray-900 transition-colors">Certifications</Link>
+            <DropdownMenu
+              label='How to custom'
+              items={howtoItems}
+              linkColor="text-gray-600 hover:text-gray-900"
+            />
             <Link href="/wholesale" className="text-gray-600 hover:text-gray-900 transition-colors">Wholesale</Link>
             <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
               {t('contact')}
@@ -102,10 +105,10 @@ export default function Navbar() {
               </div>
               <div className="px-3 py-2">
                 <div className="text-base font-medium text-gray-600 hover:text-gray-900">
-                  Support
+                  How to custom
                 </div>
                 <div className="mt-2 space-y-1">
-                  {supportItems.map((item) => (
+                  {howtoItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
