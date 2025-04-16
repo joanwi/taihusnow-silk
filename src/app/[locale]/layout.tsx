@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactWidget from '@/components/ContactWidget';
@@ -23,7 +23,7 @@ export default async function LocaleLayout({
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
-    notFound();
+    redirect('/en');
   }
 
   return (
@@ -35,7 +35,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow flex flex-col">
+            <main className="flex-grow flex flex-col pt-16">
               {children}
             </main>
             <Footer />
