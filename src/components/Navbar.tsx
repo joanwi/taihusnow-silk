@@ -12,7 +12,7 @@ export default function Navbar() {
 
   const productItems = [
     { label: 'All Products', href: '/products' },
-    { label: 'Winter', href: '/winter' },
+    { label: 'All Season Duvet', href: '/all-season-duvet' },
     { label: 'B', href: '/products/b' },
     { label: 'C', href: '/products/c' },
   ];
