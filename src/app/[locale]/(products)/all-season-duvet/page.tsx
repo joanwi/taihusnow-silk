@@ -6,7 +6,7 @@ export default function WinterPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center">
+      <section className="relative h-[700px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/images/Custom-Wholesale-Silk-Duvet-1.webp"

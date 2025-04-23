@@ -10,21 +10,31 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative w-full h-[700px] bg-gray-600">
+      {/* hero section */}
+      <section className="relative w-full h-screen">
+        <Image
+          src="/images/2025-CANTON-FAIR.webp"
+          alt="Canton Fair 2025"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Content Overlay */}
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 md:px-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Premium Silk Duvets for Global Wholesale
-          </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl">
-            25+ Years of Excellence in Manufacturing High-Quality Silk Bedding Products
-          </p>
-          <Link 
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-colors duration-300"
-          >
-            Request a Quote
-          </Link>
+        <div className="absolute inset-0">
+          <div className="relative h-full flex flex-col items-center justify-end pb-28 text-center text-gray-800 px-4 md:px-8">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Premium Silk Duvets for Global Wholesale
+            </h1>
+            <p className="text-lg md:text-xl mb-4 max-w-2xl">
+              25+ Years of Excellence in Manufacturing High-Quality Silk Bedding Products
+            </p>
+            <Link 
+              href="/contact"
+              className="bg-white hover:bg-gray-100 text-gray-900 font-semibold p-3 rounded-md transition-colors duration-300"
+            >
+              Send Inquiry Now
+            </Link>
+          </div>
         </div>
       </section>
 
