@@ -13,8 +13,8 @@ export default function Navbar() {
   const productItems = [
     { label: 'All Products', href: '/products' },
     { label: 'All Season Duvet', href: '/all-season-duvet' },
-    { label: 'B', href: '/products/b' },
-    { label: 'C', href: '/products/c' },
+    { label: 'Summer Duvet', href: '/summer-duvet' },
+    { label: 'd', href: '#' },
   ];
 
   const howtoItems = [

@@ -1,8 +1,6 @@
-'use client';
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Button } from './ui/button';
 import { ContactForm } from './ContactForm';
 
 export default function Footer() {
