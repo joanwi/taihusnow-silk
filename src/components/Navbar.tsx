@@ -14,7 +14,7 @@ export default function Navbar() {
     { label: 'All Products', href: '/products' },
     { label: 'All Season Duvet', href: '/all-season-duvet' },
     { label: 'Summer Duvet', href: '/summer-duvet' },
-    { label: 'd', href: '#' },
+    { label: 'Duvet', href: '/duvet' },
   ];
 
   const howtoItems = [
