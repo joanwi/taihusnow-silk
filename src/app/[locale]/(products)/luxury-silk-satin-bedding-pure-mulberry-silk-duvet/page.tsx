@@ -4,31 +4,30 @@ import { ProductInfo, type Product } from "@/components/product/ProductInfo";
 import Image from "next/image";
 
 const productData: Product = {
-  title: "Wholesale OEKO-Tex 100% Mulberry Pink Summer Duvet",
+  title: "wholesale Luxury Oeko-Tex Qualified Luxury Silk Satin Bedding Pure Mulberry Silk Duvet",
   descriptions: [
-    "100% Grade A long-strand mulberry silk filling",
-    "300 GSM filling weight - ideal for summer",
-    "300 thread count 100% cotton sateen cover",
-    "Box-stitched design prevents silk shifting",
-    "Temperature regulating and moisture-wicking",
-    "Oeko-Tex Standard 100 certified"
+    "Fabric: 100% grade 6A mulberry silk(16mm/19mm/22mm/25mm)",
+    "Certified: OEKO-Tex Standard 100 Certification",
+    "Multiple Benefits: Super soft, incredible cozy, and smooth yet breathable, infused with hydration to delivers intense long-lasting moisture keep skin and hair healthy, anti aging; anti-allergenic, no shifting perfect for allergy suffers.",
+    "Sales Models: Wholesale/Sample",
   ],
-  price: "$45.00 - $75.00",
-  MOQ: "100 pcs",
+  price: "$50 - $200 (Negotiable)",
+  MOQ: "30 pcs",
   sizes: [
     "Twin (150×200cm)",
+    "Full (180×220cm)",
     "Queen (200×230cm)",
     "King (220×240cm)",
-    "Custom Size"
+    "Customized Size"
   ],
-  colors: ["Pink", "Blue", "Yellow"],
+  colors: ["Ivory white", "Black", "Pink", "Beige", "Navy", "Baby blue", "Purple", "Green", "Rose", "Customized Color"],
   imagesUrl: [
-    '/images/summer-duvet-1.webp',
-    '/images/summer-duvet-2.webp',
-    '/images/summer-duvet-3.webp',
-    '/images/summer-duvet-4.webp',
-    '/images/summer-duvet-5.webp',
-    '/images/summer-duvet-6.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-1.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-2.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-3.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-4.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-5.webp',
+    '/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-6.webp',
   ]
 };
 

@@ -13,8 +13,12 @@ export default function Navbar() {
   const productItems = [
     { label: 'All Products', href: '/products' },
     { label: 'All Season Duvet', href: '/all-season-duvet' },
-    { label: 'Summer Duvet', href: '/summer-duvet' },
     { label: 'Duvet', href: '/duvet' },
+    { label: '2-Summer Duvet', href: '/summer-duvet' },
+    { label: '3-Long Strand Mulberry Silk Duvet', href: '/long-strand-mulberry-silk-duvet' },
+    { label: '4-Luxury Silk Satin Bedding', href: '/luxury-silk-satin-bedding-pure-mulberry-silk-duvet'},
+    { label: '5-Natural Soft Silk Quilt', href: '/natural-soft-silk-quilt'},
+    { label: '6-Summer Mulberry Silk Print Duvet', href: '/summer-mulberry-silk-print-duvet'},
   ];
 
   const howtoItems = [

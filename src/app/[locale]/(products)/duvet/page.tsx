@@ -1,42 +1,52 @@
 'use client'
 import Image from 'next/image';
-import ProductCarousel from '@/components/ProductCarousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Accordion from '@/components/Accordion';
+import { Button } from '@/components/ui/button';
+import ProductCard from "@/components/ProductCard";
 
 const products = [
   {
     id: 1,
-    image: "/images/Custom-Wholesale-Silk-Duvet-5.webp",
+    image: "/images/Custom-Wholesale-Silk-Duvet-1.webp",
     title: "Printed Silk Bedding",
     description: "Sinosilk's printed silk bedding infuses your personality with the delicacy of Grade 6A silk satin. Whether you prefer bold designs or intricate patterns, we can reproduce them with precision in eco-conscious printing – our factory is equipped with top-rate machines and skilled technicians. Besides, our in-house artists are on hand at every point of your designing, solving any challenges you meet.",
     href: "/summer-duvet",
   },
   {
     id: 2,
-    image: "/images/Custom-Wholesale-Silk-Duvet-6.webp",
-    title: "Two-tone Silk Bedding",
+    image: "/images/long-strand-mulberry-silk-duvet-1.webp",
+    title: "Long Strand Mulberry Silk Duvet",
     description: "Feeling monotonous about solid colors? Our two-tone silk bedding offers you the perfect solution. This collection of products assumes two colors respectively on their obverses and reverses. Thus, you can enjoy two using experiences from one set of silk bedding. If you waver on choosing your personal matching, contact us and we will give you advice based on your preferences and aesthetic perspective.",
-    href: "/summer-duvet",
+    href: "/long-strand-mulberry-silk-duvet",
   },
   {
     id: 3,
-    image: "/images/Custom-Wholesale-Silk-Duvet-1.webp",
-    title: "Silk Jacquard Bedding",
+    image: "/images/luxury-silk-satin-bedding-pure-mulberry-silk-duvet-1.webp",
+    title: "Luxury Silk Satin Bedding",
     description: "Sinosilk's silk jacquard bedding boasts lustrous hues and subtle patterns that exude sophistication and glamour. The custom jacquard designs can add a unique touch of artistry, making silk bedding sets captivating masterpieces. Despite their visually stunning appeal, these beddings still furnish your sleep with incredible comfort.",
-    href: "/summer-duvet",
+    href: "/luxury-silk-satin-bedding-pure-mulberry-silk-duvet",
   },
   {
     id: 4,
-    image: "/images/Custom-Wholesale-Silk-Duvet-2.webp",
-    title: "Classic Silk Duvet",
+    image: "/images/natural-soft-silk-quilt-1.webp",
+    title: "Natural Soft Silk Quilt",
     description: "Our classic silk duvet is crafted from 100% mulberry silk, offering exceptional breathability and comfort for all seasons. The timeless design fits any bedroom style, while the natural silk filling ensures a restful night's sleep.",
-    href: "/products/classic-silk-duvet",
+    href: "/natural-soft-silk-quilt",
   },
   {
     id: 5,
-    image: "/images/Custom-Wholesale-Silk-Duvet-3.webp",
-    title: "Luxury Silk Bedding Set",
+    image: "/images/summer-mulberry-silk-print-duvet-1.webp",
+    title: "Summer Mulberry Silk Print Duvet",
     description: "Upgrade your bedroom with our luxury silk bedding set, including duvet, pillowcases, and sheets. Each piece is made from premium silk for a smooth, skin-friendly touch and elegant look, perfect for those who value both comfort and style.",
-    href: "/products/luxury-silk-bedding-set",
+    href: "/summer-mulberry-silk-print-duvet",
   },
 ];
 
@@ -57,7 +67,7 @@ export default function WinterPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="">
             <h1 className="text-4xl text-white md:text-5xl font-bold  mb-6">
-            Custom Wholesale Silk Duvet
+              Custom Wholesale Silk Duvet
             </h1>
             <ul className="text-white text-base space-y-2 mb-8">
               <li className="flex items-center gap-2">
@@ -85,13 +95,13 @@ export default function WinterPage() {
                 No MOQ, considerable discounts for bulk orders
               </li>
             </ul>
-            <button className="bg-white text-gray-900 p-2 rounded-full font-medium hover:bg-gray-100 transition-colors">
-            Send Inquiry Now
-            </button>
+            <Button className="">
+              Send Inquiry Now
+            </Button>
           </div>
         </div>
       </section>
-      
+
       {/* Overview Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,15 +122,37 @@ export default function WinterPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Discover Our Curated Collection of Silk Duvets</h2>
-            <p className="text-gray-600 text-lg mb-4 leading-8"> 
-            Sinosilk offers a full range of silk bedding, available both as individual items and in sets. Made from 100% mulberry silk satin, our products come in various thickness options, including 16, 19, 22, 25, and 30 momme. Our silk bedding set allows for flexible combinations and matching. Typically, a set includes: 
+            <p className="text-gray-600 text-lg mb-4 leading-8">
+              Sinosilk offers a full range of silk bedding, available both as individual items and in sets. Made from 100% mulberry silk satin, our products come in various thickness options, including 16, 19, 22, 25, and 30 momme. Our silk bedding set allows for flexible combinations and matching. Typically, a set includes:
             </p>
             <ul className="list-disc list-inside text-gray-600 text-lg mb-4 leading-8">
               <li>Silk Duvet</li>
               <li>Silk Pillowcase</li>
               <li>Silk Pillow</li>
             </ul>
-            <ProductCarousel products={products} />
+            
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {products.map((product) => (
+                  <CarouselItem key={product.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <ProductCard {...product} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -135,7 +167,7 @@ export default function WinterPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">
                   {/* Ruler Icon */}
-                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="8" y="20" width="40" height="16" rx="4" stroke="#D1A07A" strokeWidth="2" fill="none"/><path d="M16 24v8M24 24v8M32 24v8M40 24v8" stroke="#D1A07A"/></svg>
+                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="8" y="20" width="40" height="16" rx="4" stroke="#D1A07A" strokeWidth="2" fill="none" /><path d="M16 24v8M24 24v8M32 24v8M40 24v8" stroke="#D1A07A" /></svg>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Sizes Available</h3>
                 <ul className="text-gray-700 text-base mb-2 text-left inline-block">
@@ -150,7 +182,7 @@ export default function WinterPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">
                   {/* Needle Icon */}
-                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><path d="M14 42L42 14M28 28l8-8" stroke="#D1A07A"/><circle cx="14" cy="42" r="4" stroke="#D1A07A"/></svg>
+                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><path d="M14 42L42 14M28 28l8-8" stroke="#D1A07A" /><circle cx="14" cy="42" r="4" stroke="#D1A07A" /></svg>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Embroidery & Stitching</h3>
                 <p className="text-gray-700 text-base">With our expert design support, you can have your personalized monograms, patterns, or designs embroidered or stitched on the silk bedding sets.</p>
@@ -159,7 +191,7 @@ export default function WinterPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">
                   {/* Pillowcase Icon */}
-                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="12" y="16" width="32" height="24" rx="6" stroke="#D1A07A"/><rect x="18" y="22" width="20" height="12" rx="3" stroke="#D1A07A"/></svg>
+                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="12" y="16" width="32" height="24" rx="6" stroke="#D1A07A" /><rect x="18" y="22" width="20" height="12" rx="3" stroke="#D1A07A" /></svg>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Closure & Edge of Silk Pillowcases</h3>
                 <p className="text-gray-700 text-base mb-2">By closure type, available options are envelope pillowcases and zipper pillowcases.</p>
@@ -169,7 +201,7 @@ export default function WinterPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">
                   {/* Box Icon */}
-                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="12" y="16" width="32" height="24" rx="4" stroke="#D1A07A"/><path d="M12 24h32" stroke="#D1A07A"/><path d="M28 16v24" stroke="#D1A07A"/></svg>
+                  <svg width="56" height="56" fill="none" stroke="#D1A07A" strokeWidth="2" viewBox="0 0 56 56"><rect x="12" y="16" width="32" height="24" rx="4" stroke="#D1A07A" /><path d="M12 24h32" stroke="#D1A07A" /><path d="M28 16v24" stroke="#D1A07A" /></svg>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Packaging & Labeling</h3>
                 <p className="text-gray-700 text-base mb-2">By default, our silk bedding set is packed with an Opp bag. Sinosilk also supplies various custom packaging services. We can assist in designing your tailor-made packages, like gift packaging.</p>
@@ -181,10 +213,40 @@ export default function WinterPage() {
         </div>
       </section>
 
-      {/* Details Section */}
+      {/* Benefits Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Benefits of Silk Bedding
+              </h2>
+              <ul className="space-y-4">
+                <li>
+                  <span className="font-bold text-gray-900">Lustrous sheen</span>
+                  <span className="text-gray-600"> – The satin weave lends the bedding a soft, radiant sheen for an upscale, romantic look in the bedroom.</span>
+                </li>
+                <li>
+                  <span className="font-bold text-gray-900">Impeccable appearance</span>
+                  <span className="text-gray-600"> – Sinosilk incorporates your personal artistry with the supreme opulence of silk to the nines.</span>
+                </li>
+                <li>
+                  <span className="font-bold text-gray-900">Unmatched comfortability</span>
+                  <span className="text-gray-600"> – The silk bedding's softness cradles you in an opulent embrace akin to sleeping amidst the clouds. With its natural breathability and temperature-regulating properties, our silk beddings provide breathable comfort throughout the seasons.</span>
+                </li>
+                <li>
+                  <span className="font-bold text-gray-900">Zero static</span>
+                  <span className="text-gray-600"> – Due to the finest silk fabric, our beddings reduce friction and will effortlessly drape the skin. This characteristic promises users restful slumber.</span>
+                </li>
+                <li>
+                  <span className="font-bold text-gray-900">Protection for hair and skin</span>
+                  <span className="text-gray-600"> – Silk bedding caresses your skin and hair with a gentleness touch and it preserves the moisture in hair and skin, reducing friction, and preventing wrinkles and hair breakage.</span>
+                </li>
+              </ul>
+              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                Send Inquiry Now
+              </button>
+            </div>
             <div className="relative h-[500px]">
               <Image
                 src="/images/Custom-Wholesale-Silk-Duvet-2.webp"
@@ -193,94 +255,14 @@ export default function WinterPage() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Silk Duvet Details
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Material:</span>
-                  <span className="text-gray-600">100% Mulberry Silk, 6A Grade</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Fabric Options:</span>
-                  <span className="text-gray-600">16mm, 19mm, 22mm, 25mm</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Colors:</span>
-                  <span className="text-gray-600">Ivory, Black, Pink, Beige, Navy, Blue, Purple, Green, Rose Gold, Grey, Red, or customized colors</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Sizes:</span>
-                  <span className="text-gray-600">Twin, Queen, King, Super King, or customized sizes</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Season:</span>
-                  <span className="text-gray-600">All Season</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Weight:</span>
-                  <span className="text-gray-600">Customizable</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Usage:</span>
-                  <span className="text-gray-600">Home, Hotel, Hospital, Travel, Camping</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Age Group:</span>
-                  <span className="text-gray-600">Baby, Children, Middle-Aged, Aged</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Certifications:</span>
-                  <span className="text-gray-600">OEKO-Tex Standard 100, BSCI</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
-                Send Inquiry Now
-              </button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Colors Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Silk Duvet Features
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Material:</span>
-                  <span className="text-gray-600">Handmade 100% Mulberry Silk Quilt</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Health Benefits:</span>
-                  <span className="text-gray-600">Hypoallergenic, suitable for asthma and allergy relief</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Comfort:</span>
-                  <span className="text-gray-600">Breathable, soft, smooth, and comfortable</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Skin Care:</span>
-                  <span className="text-gray-600">Anti-aging and beneficial for skin care</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Temperature Control:</span>
-                  <span className="text-gray-600">Temperature-regulating for hot and cold sleepers</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Gift Option:</span>
-                  <span className="text-gray-600">High-quality craftsmanship, ideal for gifting on occasions like Thanksgiving, Christmas, or anniversaries</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
-                Send Inquiry Now
-              </button>
-            </div>
             <div className="relative h-[500px]">
               <Image
                 src="/images/Custom-Wholesale-Silk-Duvet-3.webp"
@@ -289,14 +271,45 @@ export default function WinterPage() {
                 className="object-cover rounded-lg"
               />
             </div>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Explore An Array Of Stunning Colors
+              </h2>
+              <p className="text-gray-600 mb-4">Here is a list of some popular colors for your reference when customizing your silk bedding:</p>
+              <ul className="list-disc list-inside text-gray-600 mb-4">
+                <li>Grey</li>
+                <li>Black</li>
+                <li>White</li>
+                <li>Green</li>
+                <li>Blue</li>
+                <li>Pink</li>
+                <li>Orange</li>
+                <li>Champagne</li>
+              </ul>
+              <p className="text-gray-600">You can choose from classic neutrals or add a pop of color with shades of blush or navy blue. For more info about the color matching of silk bedding, send an inquiry and get expert advice from our pros.</p>
+              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                Send Inquiry Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Custom Section */}
+      {/* Certified Sustainability and Safety Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Certified Sustainability and Safety
+              </h2>
+              <p className="text-gray-600 mb-4">
+              Obtaining an OEKO-TEX® certification is assertive evidence that Sinosilk's silk bedding sets assure customers of safety and environmental friendliness. With this international accredit, we are taking another step forward in our mission to deliver exceptional quality while prioritizing customers' health and the environment.
+              </p>
+              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
+                Send Inquiry Now
+              </button>
+            </div>
             <div className="relative h-[500px]">
               <Image
                 src="/images/Custom-Wholesale-Silk-Duvet-4.webp"
@@ -305,37 +318,23 @@ export default function WinterPage() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Custom Service
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Bulk price:</span>
-                  <span className="text-gray-600">$30-$100/Negotiable</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">MOQ:</span>
-                  <span className="text-gray-600">30 pieces; no MOQ for stock products</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Samples:</span>
-                  <span className="text-gray-600">Samples offered, sample fee refunded in subsequent orders</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Production:</span>
-                  <span className="text-gray-600">Over 300,000 pieces annually</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="font-bold text-gray-900">Shipping:</span>
-                  <span className="text-gray-600">Cooperation with UPS, DHL, FedEx, and other logistics companies for favorable freight prices</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
-                Send Inquiry Now
-              </button>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* How to Maintain Sinosilk's Silk Bedding? Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            How to Maintain Sinosilk's Silk Bedding?
+          </h2>
+          <p className="text-gray-600 mb-4 text-center">To ensure the longevity and beauty of the silk bedding set, please follow these care instructions.</p>
+          <ul className="list-disc list-inside text-gray-600 max-w-7xl mx-auto mb-4">
+            <li><span className="font-bold">Washing:</span> Hand wash or machine wash on a gentle cycle with cold water. Please use a mild detergent special for silk. You should also avoid bleach or softeners in case they damage the silk fibers.</li>
+            <li><span className="font-bold">Drying:</span> Do not wring or twist the silk bedding. Just lay it flat on a clean, dry towel to get rid of moisture, and then air it dry away from direct sunlight.</li>
+            <li><span className="font-bold">Storing:</span> Store your silk bedding in a cool, dry cabinet and keep it in a breathable bag to protect it from dust and insects.</li>
+            <li><span className="font-bold">Using:</span> Rotate your silk bedding regularly to ensure even wear. Keep the bedding away from rough surfaces to prevent snags.</li>
+          </ul>
         </div>
       </section>
 
@@ -345,52 +344,46 @@ export default function WinterPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
             Frequently Asked Questions
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Left Column */}
-            <div className="space-y-6">
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Is your fabric 100% mulberry silk?</p>
-                <p className="text-gray-600">We use non-toxic 6a Grade 100% mulberry silk fabric.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">DO you have OEKO-TEX and BSCI certification?</p>
-                <p className="text-gray-600">Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">May I have a sample？</p>
-                <p className="text-gray-600">We can offer samples.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">What is your MOQ?</p>
-                <p className="text-gray-600">MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample.</p>
-              </div>
-            </div>
-            {/* Right Column */}
-            <div className="space-y-6">
-              <div>
-                <p className="font-bold text-gray-900 mb-2">What is your company's production capacity?</p>
-                <p className="text-gray-600">We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">What shipping method do you use?</p>
-                <p className="text-gray-600">We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">What customized service do you provide?</p>
-                <p className="text-gray-600">We provide product color, size, printing pattern, packaging box, label customization etc.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">May I get a cheaper price?</p>
-                <p className="text-gray-600">A workable discount will be given if there is a large quantity. More quantity, the less cost.</p>
-              </div>
-            </div>
+          <div className="max-w-5xl mx-auto">
+            <Accordion faqs={[
+              {
+                question: 'Is your fabric 100% mulberry silk?',
+                answer: 'We use non-toxic 6a Grade 100% mulberry silk fabric.'
+              },
+              {
+                question: 'DO you have OEKO-TEX and BSCI certification?',
+                answer: 'Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights.'
+              },
+              {
+                question: 'May I have a sample？',
+                answer: 'We can offer samples.'
+              },
+              {
+                question: 'What is your MOQ?',
+                answer: 'MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample.'
+              },
+              {
+                question: "What is your company's production capacity?",
+                answer: 'We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc.'
+              },
+              {
+                question: 'What shipping method do you use?',
+                answer: 'We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price.'
+              },
+              {
+                question: 'What customized service do you provide?',
+                answer: 'We provide product color, size, printing pattern, packaging box, label customization etc.'
+              },
+              {
+                question: 'May I get a cheaper price?',
+                answer: 'A workable discount will be given if there is a large quantity. More quantity, the less cost.'
+              }
+            ]} />
           </div>
         </div>
       </section>
 
-      {/* Product Cards Section */}
-      
-      
+
     </>
   );
 }
