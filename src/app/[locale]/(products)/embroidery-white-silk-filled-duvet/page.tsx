@@ -1,6 +1,6 @@
 import { ProductInfo, type Product } from "@/components/product/ProductInfo";
-import { AnchorNav, sections } from "@/components/product/AnchorNav";
 import Image from "next/image";
+import { AnchorNav, sections } from "@/components/product/AnchorNav";
 import {
   Accordion,
   AccordionContent,
@@ -9,30 +9,31 @@ import {
 } from "@/components/ui/accordion";
 
 const productData: Product = {
-  title: "Summer Mulberry Silk print Duvet",
+  title: "Butterfly Embroidery White Silk Filled Duvet",
   descriptions: [
-    "Fabric: 100% grade 6A mulberry silk(16mm/19mm/22mm/25mm)",
-    "Certified: OEKO-Tex Standard 100 Certification",
-    "Multiple Benefits: Super soft, incredible cozy, and smooth yet breathable, infused with hydration to delivers intense long-lasting moisture keep skin and hair healthy, anti aging; anti-allergenic, no shifting perfect for allergy suffers.",
-    "Sales Models: Wholesale/Sample",
+    "100% Grade A long-strand mulberry silk filling",
+    "300 GSM filling weight - ideal for summer",
+    "300 thread count 100% cotton sateen cover",
+    "Box-stitched design prevents silk shifting",
+    "Temperature regulating and moisture-wicking",
+    "Oeko-Tex Standard 100 certified"
   ],
-  price: "$50 - $200 (Negotiable)",
-  MOQ: "30 pcs",
+  price: "$45.00 - $75.00",
+  MOQ: "100 pcs",
   sizes: [
     "Twin (150×200cm)",
-    "Full (180×220cm)",
     "Queen (200×230cm)",
     "King (220×240cm)",
-    "Customized Size"
+    "Custom Size"
   ],
-  colors: ["Ivory white", "Black", "Pink", "Beige", "Navy", "Baby blue", "Purple", "Green", "Rose", "Customized Color"],
+  colors: ["Pink", "Blue", "Yellow"],
   imagesUrl: [
-    '/images/summer-mulberry-silk-print-duvet-1.webp',
-    '/images/summer-mulberry-silk-print-duvet-2.webp',
-    '/images/summer-mulberry-silk-print-duvet-3.webp',
-    '/images/summer-mulberry-silk-print-duvet-4.webp',
-    '/images/summer-mulberry-silk-print-duvet-5.webp',
-    '/images/summer-mulberry-silk-print-duvet-6.webp',
+    '/images/embroidery-white-silk-filled-duvet-1.webp',
+    '/images/embroidery-white-silk-filled-duvet-2.webp',
+    '/images/embroidery-white-silk-filled-duvet-3.webp',
+    '/images/embroidery-white-silk-filled-duvet-4.webp',
+    '/images/embroidery-white-silk-filled-duvet-5.webp',
+    '/images/embroidery-white-silk-filled-duvet-6.webp',
   ]
 };
 
@@ -74,13 +75,12 @@ const faqs = [
 export default function SummerDuvet() {
 
   return (
-    <>  
+    <>
         {/* Product Header Section */}
         <section className="px-4 py-8 md:px-8">
           <ProductInfo product={productData} />
         </section>
 
-        {/* Anchor Navigation */}
         <AnchorNav sections={sections} />
 
         {/* Product Description Section */}
@@ -152,8 +152,8 @@ export default function SummerDuvet() {
           </div>
         </section>
 
-       {/* FAQ Section */}
-       <section id="faq" className="pb-16 bg-gray-50">
+        {/* FAQ Section */}
+        <section id="faq" className="pb-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">FAQ</h2>
             <div className="max-w-4xl mx-auto">

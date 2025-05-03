@@ -28,19 +28,17 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.className} min-h-screen bg-gray-50 flex flex-col`}>
-      <head>
+       <head>
         <meta name="robots" content="noindex" />
       </head>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <NextIntlClientProvider>
-          <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow flex flex-col pt-16">
               {children}
             </main>
             <Footer />
             <ContactWidget />
-          </div>
         </NextIntlClientProvider>
       </body>
     </html>

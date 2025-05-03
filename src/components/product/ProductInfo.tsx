@@ -1,3 +1,4 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
@@ -51,7 +52,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       {/* Left: Image Gallery */}
       <div className="relative">
         {/* Main Image with Magnifier */}
@@ -126,7 +127,6 @@ export function ProductInfo({ product }: ProductInfoProps) {
       {/* Right: Product Info */}
       <div>
         <h1 className="text-3xl font-bold mb-12">{product.title}</h1>
-        
         {/* Descriptions */}
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Descriptions</h2>

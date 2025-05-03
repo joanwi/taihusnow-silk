@@ -1,7 +1,12 @@
-'use client';
-import { useState, useEffect } from "react";
 import { ProductInfo, type Product } from "@/components/product/ProductInfo";
 import Image from "next/image";
+import { AnchorNav, sections } from "@/components/product/AnchorNav";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const productData: Product = {
   title: "Wholesale OEKO-Tex 100% Mulberry Pink Summer Duvet",
@@ -32,58 +37,51 @@ const productData: Product = {
   ]
 };
 
-const sections = [
-  { id: "desc", label: "Product Description" },
-  { id: "why", label: "Why Choose Us" },
-  { id: "faq", label: "FAQ" },
+const faqs = [
+  {
+    question: "Is your fabric 100% mulberry silk?",
+    answer: "We use non-toxic 6a Grade 100% mulberry silk fabric."
+  },
+  {
+    question: "DO you have OEKO-TEX and BSCI certification?",
+    answer: "Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights."
+  },
+  {
+    question: "May I have a sample?",
+    answer: "We can offer samples."
+  },
+  {
+    question: "What is your MOQ?",
+    answer: "MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample."
+  },
+  {
+    question: "What is your company's production capacity?",
+    answer: "We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc."
+  },
+  {
+    question: "What shipping method do you use?",
+    answer: "We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price."
+  },
+  {
+    question: "What customized service do you provide?",
+    answer: "We provide product color, size, printing pattern, packaging box, label customization etc."
+  },
+  {
+    question: "May I get a cheaper price?",
+    answer: "A workable discount will be given if there is a large quantity. More quantity, the less cost."
+  }
 ];
 
 export default function SummerDuvet() {
-  const [active, setActive] = useState("desc");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = "desc";
-      for (const sec of sections) {
-        const el = document.getElementById(sec.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) current = sec.id;
-        }
-      }
-      setActive(current);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8 md:px-8">
+    <>
         {/* Product Header Section */}
-        <ProductInfo product={productData} />
+        <section className="px-4 py-8 md:px-8">
+          <ProductInfo product={productData} />
+        </section>
 
-        {/* Anchor Navigation */}
-        <nav className="sticky top-16 z-40 bg-white border-t border-gray-200 flex justify-center py-3">
-          <ul className="flex gap-4 md:gap-8">
-            {sections.map((sec) => (
-              <li key={sec.id}>
-                <button
-                  type="button"
-                  className={`text-gray-700 font-medium px-3 py-1 rounded focus:outline-none transition-colors ${
-                    active === sec.id ? "bg-gray-100 text-blue-600" : "hover:bg-gray-100"
-                  }`}
-                  onClick={() =>
-                    document.getElementById(sec.id)?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  {sec.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <AnchorNav sections={sections} />
 
         {/* Product Description Section */}
         <section id="desc" className="py-16 bg-gray-50">
@@ -158,44 +156,20 @@ export default function SummerDuvet() {
         <section id="faq" className="pb-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">FAQ</h2>
-            
-            <div className="space-y-6 max-w-2xl mx-auto">
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q1: Is your fabric 100% mulberry silk?</p>
-                <p className="text-gray-700">A: We use non-toxic 6a Grade 100% mulberry silk fabric.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q2: DO you have OEKO-TEX and BSCI certification?</p>
-                <p className="text-gray-700">A: Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q3: May I have a sample?</p>
-                <p className="text-gray-700">A: We can offer samples.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q4: What is your MOQ?</p>
-                <p className="text-gray-700">A: MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q5: What is your company's production capacity?</p>
-                <p className="text-gray-700">A: We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q6: What shipping method do you use?</p>
-                <p className="text-gray-700">A: We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q7: What customized service do you provide?</p>
-                <p className="text-gray-700">A: We provide product color, size, printing pattern, packaging box, label customization etc.</p>
-              </div>
-              <div>
-                <p className="font-bold text-gray-900 mb-2">Q8: May I get a cheaper price?</p>
-                <p className="text-gray-700">A: A workable discount will be given if there is a large quantity. More quantity, the less cost.</p>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index + 1}`}>
+                    <AccordionTrigger>{faq.question}</AccordionTrigger>
+                    <AccordionContent>
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
-      </div>
-    </div>
+    </>
   );
 }

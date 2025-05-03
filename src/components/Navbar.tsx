@@ -19,6 +19,10 @@ export default function Navbar() {
     { label: '4-Luxury Silk Satin Bedding', href: '/luxury-silk-satin-bedding-pure-mulberry-silk-duvet'},
     { label: '5-Natural Soft Silk Quilt', href: '/natural-soft-silk-quilt'},
     { label: '6-Summer Mulberry Silk Print Duvet', href: '/summer-mulberry-silk-print-duvet'},
+    { label: '7-Mulberry Silk Filled Comforter', href: '/mulberry-silk-filled-comforter'},
+    { label: '8-Embroidery White Silk Filled Duvet', href: '/embroidery-white-silk-filled-duvet'},
+    { label: '9-Print White Silk Quilt Comforter', href: '/print-white-silk-quilt-comforter'},
+    { label: '10-Ice Cream Silk Summer Comforter', href: '/ice-cream-silk-summer-comforter'},
   ];
 
   const howtoItems = [
@@ -38,7 +42,7 @@ export default function Navbar() {
           </div>
           
           {/* 桌面端导航 */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
             <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
               {t('home')}
             </Link>

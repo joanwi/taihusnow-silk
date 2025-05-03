@@ -1,16 +1,7 @@
-'use client'
 import Image from 'next/image';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import Accordion from '@/components/Accordion';
 import { Button } from '@/components/ui/button';
-import ProductCard from "@/components/ProductCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import AutoCarousel from "@/components/product/AutoCarousel";
 
 const products = [
   {
@@ -49,6 +40,41 @@ const products = [
     href: "/summer-mulberry-silk-print-duvet",
   },
 ];
+
+const faqs = [
+  {
+    question: 'Is your fabric 100% mulberry silk?',
+    answer: 'We use non-toxic 6a Grade 100% mulberry silk fabric.'
+  },
+  {
+    question: 'DO you have OEKO-TEX and BSCI certification?',
+    answer: 'Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights.'
+  },
+  {
+    question: 'May I have a sample？',
+    answer: 'We can offer samples.'
+  },
+  {
+    question: 'What is your MOQ?',
+    answer: 'MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample.'
+  },
+  {
+    question: "What is your company's production capacity?",
+    answer: 'We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc.'
+  },
+  {
+    question: 'What shipping method do you use?',
+    answer: 'We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price.'
+  },
+  {
+    question: 'What customized service do you provide?',
+    answer: 'We provide product color, size, printing pattern, packaging box, label customization etc.'
+  },
+  {
+    question: 'May I get a cheaper price?',
+    answer: 'A workable discount will be given if there is a large quantity. More quantity, the less cost.'
+  }
+]
 
 export default function WinterPage() {
   return (
@@ -131,28 +157,9 @@ export default function WinterPage() {
               <li>Silk Pillow</li>
             </ul>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                }),
-              ]}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {products.map((product) => (
-                  <CarouselItem key={product.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <ProductCard {...product} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
-              <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
-            </Carousel>
+            {/* AutoCarousel products */}
+           <AutoCarousel products={products} />
+
           </div>
         </div>
       </section>
@@ -301,10 +308,10 @@ export default function WinterPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Certified Sustainability and Safety
+                Certified Sustainability and Safety
               </h2>
               <p className="text-gray-600 mb-4">
-              Obtaining an OEKO-TEX® certification is assertive evidence that Sinosilk's silk bedding sets assure customers of safety and environmental friendliness. With this international accredit, we are taking another step forward in our mission to deliver exceptional quality while prioritizing customers' health and the environment.
+                Obtaining an OEKO-TEX® certification is assertive evidence that Sinosilk's silk bedding sets assure customers of safety and environmental friendliness. With this international accredit, we are taking another step forward in our mission to deliver exceptional quality while prioritizing customers' health and the environment.
               </p>
               <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors">
                 Send Inquiry Now
@@ -339,51 +346,23 @@ export default function WinterPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="max-w-5xl mx-auto">
-            <Accordion faqs={[
-              {
-                question: 'Is your fabric 100% mulberry silk?',
-                answer: 'We use non-toxic 6a Grade 100% mulberry silk fabric.'
-              },
-              {
-                question: 'DO you have OEKO-TEX and BSCI certification?',
-                answer: 'Yes we have many certificates such as 3 national patents, 43 practical patents, and 1800 copyrights.'
-              },
-              {
-                question: 'May I have a sample？',
-                answer: 'We can offer samples.'
-              },
-              {
-                question: 'What is your MOQ?',
-                answer: 'MOQ is 30 PCS. No MOQ requirements for stock products. Please contact us to get a free sample.'
-              },
-              {
-                question: "What is your company's production capacity?",
-                answer: 'We have our own factory with more than 500 employees, annual sales of 1.1 million pieces of silk pillowcases, 1.2 million pieces of silk eye masks, 1.5 million pieces of silk hair accessories, etc.'
-              },
-              {
-                question: 'What shipping method do you use?',
-                answer: 'We have cooperated with UPS, DHL, FedEx, and other logistics companies for many years. We have a large export volume and the most favorable freight price.'
-              },
-              {
-                question: 'What customized service do you provide?',
-                answer: 'We provide product color, size, printing pattern, packaging box, label customization etc.'
-              },
-              {
-                question: 'May I get a cheaper price?',
-                answer: 'A workable discount will be given if there is a large quantity. More quantity, the less cost.'
-              }
-            ]} />
+      <section id="faq" className="pb-16 bg-gray-50">
+        <div className="container mx-auto p-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">FAQ</h2>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index + 1}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
-
-
     </>
   );
 }
