@@ -23,6 +23,9 @@ export default function Navbar() {
     { label: '8-Embroidery White Silk Filled Duvet', href: '/embroidery-white-silk-filled-duvet'},
     { label: '9-Print White Silk Quilt Comforter', href: '/print-white-silk-quilt-comforter'},
     { label: '10-Ice Cream Silk Summer Comforter', href: '/ice-cream-silk-summer-comforter'},
+    { label: '11-Silk Quilt Blanket', href: '/silk-quilt-blanket'},
+    { label: '12-Orchid Embroidery Silk Quilt Comforter', href: '/orchid-embroidery-silk-quilt-comforter'},
+    { label: '13-Custom Silk Throw Blanket', href: '/custom-silk-throw-blanket'},
   ];
 
   const howtoItems = [
