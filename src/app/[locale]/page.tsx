@@ -3,8 +3,8 @@ import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "Taihu Silk - Premium Silk Duvets & Comforters",
-  description: "Experience the luxury of natural silk for a better night's sleep with our premium silk duvets and comforters.",
+  title: "Wholesale Silk Bedding Sets: Taihu Snow Silk Bed Set Deals",
+  description: "Find wholesale silk bedding sets & Taihu Snow silk bed set deals. Shop mulberry silk options & customize your silk bedding needs here!",
 };
 
 export default function Home() {
