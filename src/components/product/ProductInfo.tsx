@@ -30,8 +30,8 @@ export function ProductInfo({ product }: ProductInfoProps) {
   const [magnifierPosition, setMagnifierPosition] = useState({ x: 0, y: 0, bgX: 0, bgY: 0 });
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
 
   const handleMouseMoveImage = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
