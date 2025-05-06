@@ -1,5 +1,4 @@
 'use client';
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -10,6 +9,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import { QuoteButton } from "../QuoteButton";
 
 export interface Product {
   title: string;
@@ -30,6 +30,8 @@ export function ProductInfo({ product }: ProductInfoProps) {
   const [magnifierPosition, setMagnifierPosition] = useState({ x: 0, y: 0, bgX: 0, bgY: 0 });
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 
   const handleMouseMoveImage = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -149,9 +151,13 @@ export function ProductInfo({ product }: ProductInfoProps) {
           <h2 className="text-xl font-semibold mb-2">Size</h2>
           <div className="flex flex-wrap gap-3">
             {product.sizes.map((size, index) => (
-              <button 
+              <button
                 key={index}
-                className="px-4 py-2 border rounded hover:border-orange-600"
+                className={`px-4 py-2 border rounded transition-colors ${
+                  selectedSize === size ? 'border-orange-600 bg-orange-50 text-orange-700' : 'hover:border-orange-600'
+                }`}
+                onClick={() => setSelectedSize(size)}
+                type="button"
               >
                 {size}
               </button>
@@ -164,9 +170,13 @@ export function ProductInfo({ product }: ProductInfoProps) {
           <h2 className="text-xl font-semibold mb-2">Colors</h2>
           <div className="flex flex-wrap gap-3">
             {product.colors.map((color, index) => (
-              <button 
+              <button
                 key={index}
-                className="px-4 py-2 border rounded hover:border-orange-600"
+                className={`px-4 py-2 border rounded transition-colors ${
+                  selectedColor === color ? 'border-orange-600 bg-orange-50 text-orange-700' : 'hover:border-orange-600'
+                }`}
+                onClick={() => setSelectedColor(color)}
+                type="button"
               >
                 {color}
               </button>
@@ -175,12 +185,14 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </div>
 
         {/* CTA Button */}
-        <Button
-          variant="outline"
+        <QuoteButton
+          productName={product.title}
+          size={selectedSize}
+          color={selectedColor}
           className="w-full bg-orange-600 text-white"
         >
           Request Quote
-        </Button>
+        </QuoteButton>
       </div>
     </div>
   );

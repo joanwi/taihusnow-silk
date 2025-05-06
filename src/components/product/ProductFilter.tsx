@@ -1,5 +1,4 @@
 'use client'
-
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
@@ -16,7 +15,6 @@ export default function ProductFilter() {
     { id: 'winter', name: t('filter.winter') },
     { id: 'summer', name: t('filter.summer') },
     { id: 'hotel', name: t('filter.hotel') },
-    { id: 'organic', name: t('filter.organic') },
     { id: 'children', name: t('filter.children') }
   ]
 
@@ -46,11 +44,11 @@ export default function ProductFilter() {
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
-              slug={product.slug}
-              name={product.name}
-              description={product.description}
+              id={product.id}
               image={product.image}
-              price={product.price}
+              title={product.title}
+              description={product.description}
+              href={product.href}
             />
           ))}
         </div>

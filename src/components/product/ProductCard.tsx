@@ -9,6 +9,7 @@ export interface ProductCardProps {
   title: string;
   description: string;
   href: string;
+  categories?: string[];
   onButtonClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 

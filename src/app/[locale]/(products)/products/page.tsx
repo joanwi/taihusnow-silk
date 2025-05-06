@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ChevronRight, Home } from 'lucide-react'
-import ProductFilter from '@/components/allproducts/ProductFilter'
+import ProductFilter from '@/components/product/ProductFilter'
 
 export default function ProductsPage() {
   const t = useTranslations('products')

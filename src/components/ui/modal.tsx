@@ -1,15 +1,16 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { ContactForm } from '@/components/ContactForm';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  children: ReactNode;
+  title?: string;
 }
 
-export function Modal({ isOpen, onClose }: ModalProps) {
+export function Modal({ isOpen, onClose, children, title }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -52,8 +53,8 @@ export function Modal({ isOpen, onClose }: ModalProps) {
           </svg>
         </button>
         <div className="p-6">
-          <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
-          <ContactForm />
+          {title && <h2 className="text-2xl font-semibold mb-6">{title}</h2>}
+          {children}
         </div>
       </div>
     </div>,

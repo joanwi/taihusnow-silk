@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Modal } from './ui/modal';
 import { Button } from './ui/button';
+import { ContactForm } from './ContactForm';
 
 interface ContactButtonProps {
   className?: string;
@@ -24,7 +25,10 @@ export function ContactButton({ className, children }: ContactButtonProps) {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      />
+        title="Contact Us"
+      >
+        <ContactForm />
+      </Modal>
     </>
   );
 } 
