@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
+import { ContactButton } from "@/components/ContactButton";
 
 export const metadata: Metadata = {
   title: "Wholesale Silk Bedding Sets: Taihu Snow Silk Bed Set Deals",
@@ -8,12 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
   return (
     <>
       {/* hero section */}
       <section className="relative w-full h-screen">
         <Image
-          src="/images/2025-CANTON-FAIR.webp"
+          src="/images/home-hero.jpg"
           alt="Canton Fair 2025"
           fill
           className="object-cover"
@@ -28,12 +30,7 @@ export default function Home() {
             <p className="text-lg md:text-xl mb-4 max-w-2xl">
               25+ Years of Excellence in Manufacturing High-Quality Silk Bedding Products
             </p>
-            <Link
-              href="/contact"
-              className="bg-white hover:bg-gray-100 text-gray-900 font-semibold p-3 rounded-md transition-colors duration-300"
-            >
-              Send Inquiry Now
-            </Link>
+            <ContactButton className="bg-white hover:bg-gray-300 text-gray-900 font-semibold p-3 rounded-md transition-colors duration-300">Send Inquiry Now</ContactButton>
           </div>
         </div>
       </section>
@@ -87,17 +84,24 @@ export default function Home() {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4">Featured Silk Fabric Products</h2>
           <p className="text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-          Explore our premium silk duvet cover set collections designed for various seasons and needs
+            Explore our premium silk duvet cover set collections designed for various seasons and needs
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Product 1 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-64 bg-amber-400"></div>
+              <div className="h-64 relative overflow-hidden">
+                <Image 
+                  src="/images/allseason.webp" 
+                  alt="All-Season Pure Mulberry Silk Duvet" 
+                  fill 
+                  className="object-cover transition-transform duration-300 hover:scale-110" 
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">All-Season Pure Mulberry Silk Duvet</h3>
                 <p className="text-gray-600 mb-4">
-                Perfect balance of warmth and breathable for year-round comfort
+                  Perfect balance of warmth and breathable for year-round comfort
                 </p>
                 <Link
                   href="/products/all-season"
@@ -110,11 +114,18 @@ export default function Home() {
 
             {/* Product 2 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-64 bg-gray-700"></div>
+              <div className="h-64 relative overflow-hidden">
+                <Image 
+                  src="/images/summer.webp" 
+                  alt="Winter Thick Silk Duvet" 
+                  fill 
+                  className="object-cover transition-transform duration-300 hover:scale-110" 
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Winter Thick Silk Duvet</h3>
                 <p className="text-gray-600 mb-4">
-                Extra filling for superior warmth during cold winter months
+                  Extra filling for superior warmth during cold winter months
                 </p>
                 <Link
                   href="/products/winter"
@@ -127,11 +138,18 @@ export default function Home() {
 
             {/* Product 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-64 bg-slate-300"></div>
+              <div className="h-64 relative overflow-hidden">
+                <Image 
+                  src="/images/hotel.webp" 
+                  alt="Silk Satin Duvet Cover Set Hotel Collection" 
+                  fill 
+                  className="object-cover transition-transform duration-300 hover:scale-110" 
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Silk Satin Duvet Cover Set Hotel Collection</h3>
                 <p className="text-gray-600 mb-4">
-                Premium silk duvets and pillowcase designed specifically for luxury hospitality
+                  Premium silk duvets and pillowcase designed specifically for luxury hospitality
                 </p>
                 <Link
                   href="/products/hotel"
@@ -188,7 +206,7 @@ export default function Home() {
             {/* Testimonial 1 */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <p className="text-gray-600 italic mb-6">
-              "Taihu Snow has been our trusted supplier for over 5 years. Their consistent quality and reliable delivery have made them an invaluable partner for our bedding business."
+                "Taihu Snow has been our trusted supplier for over 5 years. Their consistent quality and reliable delivery have made them an invaluable partner for our bedding business."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
@@ -202,7 +220,7 @@ export default function Home() {
             {/* Testimonial 2 */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <p className="text-gray-600 italic mb-6">
-              "The customization options provided by Taihu Snow allowed us to create a unique product line that has become our bestseller. Their attention to detail is exceptional."
+                "The customization options provided by Taihu Snow allowed us to create a unique product line that has become our bestseller. Their attention to detail is exceptional."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
@@ -216,7 +234,7 @@ export default function Home() {
             {/* Testimonial 3 */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <p className="text-gray-600 italic mb-6">
-              "As a high-end hotel chain, we demand the best for our guests. Taihu Snow's hotel collection has exceeded our expectations in both quality and durability."
+                "As a high-end hotel chain, we demand the best for our guests. Taihu Snow's hotel collection has exceeded our expectations in both quality and durability."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
@@ -246,7 +264,7 @@ export default function Home() {
                 <div className="text-sm text-gray-500 mb-2">March 15, 2025</div>
                 <h3 className="text-xl font-semibold mb-2">Taihu Snow to Exhibit at Heimtextil 2025</h3>
                 <p className="text-gray-600 mb-4">
-                Visit our booth to explore our latest silk duvet collections and meet our team.
+                  Visit our booth to explore our latest silk duvet collections and meet our team.
                 </p>
                 <Link
                   href="#"
@@ -264,7 +282,7 @@ export default function Home() {
                 <div className="text-sm text-gray-500 mb-2">February 28, 2025</div>
                 <h3 className="text-xl font-semibold mb-2">New Organic Silk Collection Launched</h3>
                 <p className="text-gray-600 mb-4">
-                Our latest eco-friendly silk duvet collection has received GOTS certification.
+                  Our latest eco-friendly silk duvet collection has received GOTS certification.
                 </p>
                 <Link
                   href="#"
@@ -282,7 +300,7 @@ export default function Home() {
                 <div className="text-sm text-gray-500 mb-2">January 10, 2025</div>
                 <h3 className="text-xl font-semibold mb-2">Taihu Snow Expands Production Capacity</h3>
                 <p className="text-gray-600 mb-4">
-                New state-of-the-art facility increases our annual production by 30%.
+                  New state-of-the-art facility increases our annual production by 30%.
                 </p>
                 <Link
                   href="#"

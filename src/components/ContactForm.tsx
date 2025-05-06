@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 
-interface ContactFormProps {
-  productName: string;
-}
 
-export function ContactForm({ productName }: ContactFormProps) {
+export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +16,7 @@ export function ContactForm({ productName }: ContactFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: 实现表单提交逻辑
-    console.log('Form submitted:', { ...formData, productName });
+    console.log('Form submitted:', { ...formData });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

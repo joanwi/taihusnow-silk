@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { FC, MouseEvent } from 'react';
 import { Button } from '@/components/ui/button';
+import { ContactButton } from '@/components/ContactButton';
 
 export interface ProductCardProps {
   id: number;
@@ -24,9 +25,9 @@ const ProductCard: FC<ProductCardProps> = ({ image, title, description, href, on
       </div>
     </Link>
     <div className="px-6 pb-6">
-      <Button variant="outline" className="w-full" onClick={onButtonClick}>
+      <ContactButton className="w-full bg-gray-200 hover:bg-gray-400 text-black font-semibold p-3 rounded-md transition-colors duration-300">
         Send Inquiry Now
-      </Button>
+      </ContactButton>
     </div>
   </div>
 );
