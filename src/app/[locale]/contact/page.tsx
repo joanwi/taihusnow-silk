@@ -24,7 +24,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-            <ContactForm productName="general inquiry" />
+            <ContactForm />
           </div>
 
           {/* Contact Information */}
