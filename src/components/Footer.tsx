@@ -60,7 +60,7 @@ export default function Footer() {
           
           <div>
             <h3 className="text-gray-800 text-xl font-bold mb-4">Contact Us</h3>
-            <ContactForm productName="" />
+            <ContactForm />
           </div>
         </div>
         
