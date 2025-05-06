@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import AutoCarousel from "@/components/product/AutoCarousel";
+import { ContactButton } from '@/components/ContactButton';
 
 const products = [
   {
@@ -121,9 +122,9 @@ export default function WinterPage() {
                 No MOQ, considerable discounts for bulk orders
               </li>
             </ul>
-            <Button className="">
+            <ContactButton className="bg-white hover:bg-gray-300 text-gray-900 font-semibold p-3 rounded-md transition-colors duration-300">
               Send Inquiry Now
-            </Button>
+            </ContactButton>
           </div>
         </div>
       </section>

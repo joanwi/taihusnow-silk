@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { FC, MouseEvent } from 'react';
-import { Button } from '@/components/ui/button';
 import { ContactButton } from '@/components/ContactButton';
 
 export interface ProductCardProps {
