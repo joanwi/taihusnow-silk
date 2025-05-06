@@ -89,7 +89,7 @@ export default async function Page({
           {/* 联系表单 */}
           <div className="border-t pt-6">
             <h2 className="text-xl font-semibold mb-4">联系我们</h2>
-            <ContactForm productName={product.name} />
+            <ContactForm />
           </div>
         </div>
       </div>
