@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
-import { ChevronRight, Home } from 'lucide-react'
 import ProductFilter from '@/components/product/ProductFilter'
+import ProductsBreadcrumb from '@/components/ProductsBreadcrumb'
 
 export default function ProductsPage() {
   const t = useTranslations('products')
@@ -31,14 +30,9 @@ export default function ProductsPage() {
       {/* Navigation and Filters */}
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 py-4 text-sm text-gray-600">
-          <Link href="/" className="flex items-center hover:text-primary transition-colors">
-            <Home size={16} className="mr-1" />
-            {t('breadcrumb.home')}
-          </Link>
-          <ChevronRight size={16} />
-          <span className="text-gray-900 font-medium">{t('breadcrumb.products')}</span>
-        </nav>
+        <ProductsBreadcrumb items={[
+          { label: 'Products', isCurrent: true },
+        ]} />
 
         {/* Products Filter and Grid */}
         <ProductFilter />

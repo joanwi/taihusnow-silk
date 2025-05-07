@@ -12,20 +12,19 @@ export default function Navbar() {
 
   const productItems = [
     { label: 'All Products', href: '/products' },
-    { label: 'All Season Duvet', href: '/all-season-duvet' },
-    { label: 'Duvet', href: '/duvet' },
-    { label: '2-Summer Duvet', href: '/summer-duvet' },
-    { label: '3-Long Strand Mulberry Silk Duvet', href: '/long-strand-mulberry-silk-duvet' },
-    { label: '4-Luxury Silk Satin Bedding', href: '/luxury-silk-satin-bedding-pure-mulberry-silk-duvet'},
-    { label: '5-Natural Soft Silk Quilt', href: '/natural-soft-silk-quilt'},
-    { label: '6-Summer Mulberry Silk Print Duvet', href: '/summer-mulberry-silk-print-duvet'},
-    { label: '7-Mulberry Silk Filled Comforter', href: '/mulberry-silk-filled-comforter'},
-    { label: '8-Embroidery White Silk Filled Duvet', href: '/embroidery-white-silk-filled-duvet'},
-    { label: '9-Print White Silk Quilt Comforter', href: '/print-white-silk-quilt-comforter'},
-    { label: '10-Ice Cream Silk Summer Comforter', href: '/ice-cream-silk-summer-comforter'},
-    { label: '11-Silk Quilt Blanket', href: '/silk-quilt-blanket'},
-    { label: '12-Orchid Embroidery Silk Quilt Comforter', href: '/orchid-embroidery-silk-quilt-comforter'},
-    { label: '13-Custom Silk Throw Blanket', href: '/custom-silk-throw-blanket'},
+    { label: 'Duvet', href: '/products/duvet' },
+    { label: '2-Summer Duvet', href: '/products/summer-duvet' },
+    { label: '3-Long Strand Mulberry Silk Duvet', href: '/products/long-strand-mulberry-silk-duvet' },
+    { label: '4-Luxury Silk Satin Bedding', href: '/products/luxury-silk-satin-bedding-pure-mulberry-silk-duvet'},
+    { label: '5-Natural Soft Silk Quilt', href: '/products/natural-soft-silk-quilt'},
+    { label: '6-Summer Mulberry Silk Print Duvet', href: '/products/summer-mulberry-silk-print-duvet'},
+    { label: '7-Mulberry Silk Filled Comforter', href: '/products/mulberry-silk-filled-comforter'},
+    { label: '8-Embroidery White Silk Filled Duvet', href: '/products/embroidery-white-silk-filled-duvet'},
+    { label: '9-Print White Silk Quilt Comforter', href: '/products/print-white-silk-quilt-comforter'},
+    { label: '10-Ice Cream Silk Summer Comforter', href: '/products/ice-cream-silk-summer-comforter'},
+    { label: '11-Silk Quilt Blanket', href: '/products/silk-quilt-blanket'},
+    { label: '12-Orchid Embroidery Silk Quilt Comforter', href: '/products/orchid-embroidery-silk-quilt-comforter'},
+    { label: '13-Custom Silk Throw Blanket', href: '/products/custom-silk-throw-blanket'},
   ];
 
   const howtoItems = [

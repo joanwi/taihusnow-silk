@@ -10,6 +10,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { QuoteButton } from "../QuoteButton";
+import ProductsBreadcrumb from "@/components/ProductsBreadcrumb";
 
 export interface Product {
   title: string;
@@ -54,6 +55,11 @@ export function ProductInfo({ product }: ProductInfoProps) {
   };
 
   return (
+    <>
+      <ProductsBreadcrumb items={[
+        { label: 'Products', href: '/products' },
+        { label: product.title, isCurrent: true },  
+      ]} />
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       {/* Left: Image Gallery */}
       <div className="relative">
@@ -195,5 +201,6 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </QuoteButton>
       </div>
     </div>
+    </>
   );
 } 
