@@ -1,5 +1,25 @@
 import Image from 'next/image';
 import { ContactForm } from '@/components/ContactForm';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "How quickly can I expect a response to my inquiry?",
+    answer: "We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our sales team directly."
+  },
+  {
+    question: "How can I request product samples?",
+    answer: "You can request samples by selecting \"Sample Request\" in the inquiry type of our contact form, or by emailing wholesale@silkduvet.com with your specific requirements."
+  },
+  {
+    question: "Do you have representatives who can visit our location?",
+    answer: "Yes, for significant wholesale opportunities, our representatives can arrange visits to your location. Please contact our wholesale department to discuss this option."
+  },
+  {
+    question: "How can I find the status of my inquiry or order?",
+    answer: "For inquiries about order status, please email support@silkduvet.com with your order number or contact your assigned account manager directly."
+  }
+];
 
 export default function ContactPage() {
   return (
@@ -67,6 +87,7 @@ export default function ContactPage() {
                   Address
                 </h3>
                 <div className="space-y-2 text-gray-600">
+                  <p>Suzhou Taihu Snow Silk Co., Ltd.</p>
                   <p>No. 2428, Zhenze 318 National Road</p>
                   <p>Suzhou, Jiangsu</p>
                   <p>China</p>
@@ -94,32 +115,23 @@ export default function ContactPage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-8">
-            <div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">How quickly can I expect a response to my inquiry?</h3>
-              <p className="text-gray-600">We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please call our sales team directly.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">How can I request product samples?</h3>
-              <p className="text-gray-600">You can request samples by selecting "Sample Request" in the inquiry type of our contact form, or by emailing wholesale@silkduvet.com with your specific requirements.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">Do you have representatives who can visit our location?</h3>
-              <p className="text-gray-600">Yes, for significant wholesale opportunities, our representatives can arrange visits to your location. Please contact our wholesale department to discuss this option.</p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-blue-900 mb-2">How can I find the status of my inquiry or order?</h3>
-              <p className="text-gray-600">For inquiries about order status, please email support@silkduvet.com with your order number or contact your assigned account manager directly.</p>
-            </div>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index + 1}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
