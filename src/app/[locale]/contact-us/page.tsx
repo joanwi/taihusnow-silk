@@ -27,8 +27,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <div className="relative h-[400px]">
         <Image
-          src="/images/contact-hero.jpg"
-          alt="Contact Us"
+          src="/images/taihu-snow-silk.webp"
+          alt="Contact Us with Suzhou Taihu Snow Silk"
           fill
           className="object-cover"
           priority
@@ -48,45 +48,44 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold mb-6">Reach Us</h2>
-              
               {/* Phone */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <div className=" text-lg mb-6">
+                <h3 className="mb-2 flex items-center">
                   <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   Phone
                 </h3>
-                <div className="space-y-2 text-gray-600">
-                  <p>+86 123 4567 8910</p>
+                <div className=" font-semibold text-gray-600">
+                  <p>+86 135 8497 0970</p>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <div className=" text-lg mb-6">
+                <h3 className="mb-2 flex items-center">
                   <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Email
                 </h3>
-                <div className="space-y-2 text-gray-600">
-                  <p>info@silkduvet.com</p>
+                <div className="font-semibold text-gray-600">
+                  <p>carol@taihusnow.com</p>
+                  <p>sales@wholesalesilkbedding.com</p>
                 </div>
               </div>
 
               {/* Address */}
-              <div className="mb-2">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <div className=" text-lg mb-6">
+                <h3 className="mb-2 flex items-center">
                   <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                   Address
                 </h3>
-                <div className="space-y-2 text-gray-600">
+                <div className="font-semibold text-gray-600">
                   <p>Suzhou Taihu Snow Silk Co., Ltd.</p>
                   <p>No. 2428, Zhenze 318 National Road</p>
                   <p>Suzhou, Jiangsu</p>
@@ -94,7 +93,6 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
         {/* Google Maps */}
@@ -118,7 +116,7 @@ export default function ContactPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index + 1}`}>

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-gray-800 text-xl font-bold mb-4">Taihu Silk</h3>
+            <div className="text-gray-800 text-xl font-bold mb-4">Taihu Silk</div>
             <p className="text-gray-600 mb-4">
               Premium silk bedding products for the best nights sleep youve ever experienced.
             </p>
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-gray-800 text-xl font-bold mb-4">Quick Links</h3>
+            <div className="text-gray-800 text-xl font-bold mb-4">Quick Links</div>
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-gray-800">Shop</Link></li>
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-gray-800 text-xl font-bold mb-4">Help</h3>
+            <div className="text-gray-800 text-xl font-bold mb-4">Help</div>
             <ul className="space-y-2">
               <li><Link href="#" className="text-gray-600 hover:text-gray-800">FAQs</Link></li>
               <li><Link href="#" className="text-gray-600 hover:text-gray-800">Shipping Policy</Link></li>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-gray-800 text-xl font-bold mb-4">Contact Us</h3>
+            <div className="text-gray-800 text-xl font-bold mb-4">Contact Us</div>
             <ContactForm />
           </div>
         </div>
