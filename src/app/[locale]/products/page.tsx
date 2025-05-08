@@ -8,7 +8,7 @@ export default function ProductsPage() {
   const t = useTranslations('products')
 
   return (
-    <div className="min-h-screen">
+    <>
       {/* Hero Section */}
       <div className="relative h-[400px]">
         <Image
@@ -28,7 +28,7 @@ export default function ProductsPage() {
       </div>
 
       {/* Navigation and Filters */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-4">
         {/* Breadcrumb */}
         <ProductsBreadcrumb items={[
           { label: 'Products', isCurrent: true },
@@ -80,6 +80,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 } 

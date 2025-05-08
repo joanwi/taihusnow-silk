@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import AutoCarousel from "@/components/product/AutoCarousel";
 import { ContactButton } from '@/components/ContactButton';
-
+import ProductsBreadcrumb from '@/components/ProductsBreadcrumb';
 const products = [
   {
     id: 1,
@@ -128,6 +127,12 @@ export default function WinterPage() {
           </div>
         </div>
       </section>
+      <div className="px-4 py-4">
+        <ProductsBreadcrumb items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Duvet', isCurrent: true },  
+        ]} />
+      </div>
 
       {/* Overview Section */}
       <section className="py-16 bg-gray-50">

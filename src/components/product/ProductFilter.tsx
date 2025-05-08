@@ -23,7 +23,7 @@ export default function ProductFilter() {
     : products.filter(product => product.categories.includes(activeFilter))
 
   return (
-    <div>
+    <>
       {/* Filter Buttons */}
       <div className="flex flex-wrap gap-2 py-4 border-b">
         {filterCategories.map((category) => (
@@ -39,7 +39,7 @@ export default function ProductFilter() {
       </div>
 
       {/* Products Grid */}
-      <div className="py-16">
+      <div className="py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <ProductCard
@@ -53,6 +53,6 @@ export default function ProductFilter() {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 } 

@@ -60,7 +60,7 @@ export default function Navbar() {
               linkColor="text-gray-600 hover:text-gray-900"
             />
             <Link href="/wholesale" className="text-gray-600 hover:text-gray-900 transition-colors">Wholesale</Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/contact-us" className="text-gray-600 hover:text-gray-900 transition-colors">
               {t('contact')}
             </Link>
             <Link href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -131,7 +131,7 @@ export default function Navbar() {
                 </div>
               </div>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900"
                 onClick={() => setIsMenuOpen(false)}
               >
