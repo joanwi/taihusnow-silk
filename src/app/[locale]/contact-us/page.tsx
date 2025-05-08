@@ -81,7 +81,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold mb-6">Location</h2>
           <div className="h-[600px] rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8120.289431546677!2d120.50338600000002!3d30.91959!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b340ed1591ad4f%3A0xfc838ec26440573a!2z6IuP5bee5aSq5rmW6Zuq5Lid57u45a625bGF5pyJ6ZmQ5YWs5Y-4!5e1!3m2!1sen!2shk!4v1746668227595!5m2!1sen!2shk"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4840.646347962003!2d120.50300968596058!3d30.91870882615446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b340ed1591ad4f%3A0xfc838ec26440573a!2z6IuP5bee5aSq5rmW6Zuq5Lid57u45a625bGF5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1sen!2sus!4v1746669908977!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
