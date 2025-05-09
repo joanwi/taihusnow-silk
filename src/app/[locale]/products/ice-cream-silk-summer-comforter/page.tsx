@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 
 const productData: Product = {
-  title: "Wholesale OEKO-Tex Lightweight Ice Cream Silk Summer Comforter",
+  title: "Wholesale OEKO-Tex Lightweight Ice Cream Silk Summer Comforter  ",
   descriptions: [
     "100% Grade A long-strand mulberry silk filling",
     "300 GSM filling weight - ideal for summer",
@@ -75,7 +75,7 @@ const faqs = [
 export default function SummerDuvet() {
 
   return (
-    <>
+    <main>
         {/* Product Header Section */}
         <section className="px-4 py-8 md:px-8">
           <ProductInfo product={productData} />
@@ -170,6 +170,6 @@ export default function SummerDuvet() {
             </div>
           </div>
         </section>
-    </>
+    </main>
   );
 }

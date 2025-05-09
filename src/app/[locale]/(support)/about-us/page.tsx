@@ -3,13 +3,26 @@ import { useTranslations } from 'next-intl';
 
 export default function AboutUsPage() {
   return (
-    <main className="flex-1">
+    <main>
+      {/* Hero Section */}
+      <div className="relative h-[400px]">
+        <Image
+          src="/images/taihu-snow-silk.webp"
+          alt="About Us with Suzhou Taihu Snow Silk"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">About Us</h1>
+        </div>
+      </div>
+
       {/* Our Story Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Our Story</h2>
           <p className="text-center text-gray-500 mb-12">A journey of excellence in the textile industry since 1995</p>
-          <div className="max-w-3xl mx-auto">
             <p className="text-gray-600 mb-6">
               Founded in 1995 in Suzhou, The historic center of China's silk industry. With our years of manufacturing technology in premium quality silk products and excellent service, we have grown into a leading global manufacturer and supplier.
             </p>
@@ -19,7 +32,6 @@ export default function AboutUsPage() {
             <p className="text-gray-600">
               Our products are distributed to over 100 countries worldwide, with a strong presence in North America, Europe, Japan, South Korea, and Australia. We pride ourselves on being a trusted supplier to luxury hotels, high-end retailers, and discerning individual customers worldwide.
             </p>
-          </div>
         </div>
       </section>
 
@@ -28,7 +40,7 @@ export default function AboutUsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Our Journey</h2>
           <p className="text-center text-gray-500 mb-12">Key milestones in our development as a leading silk manufacturer</p>
-          
+
           <div className="max-w-3xl mx-auto relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-500"></div>

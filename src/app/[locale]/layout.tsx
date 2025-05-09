@@ -1,11 +1,18 @@
+import './globals.css';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { redirect } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactWidget from '@/components/ContactWidget';
-import '../globals.css';
 import { Inter } from 'next/font/google';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Wholesale Silk Bedding Sets: Taihu Snow Silk Bed Set Deals",
+  description: "Find wholesale silk bedding sets & Taihu Snow silk bed set deals. Shop mulberry silk options & customize your silk bedding needs here!",
+};
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,12 +38,10 @@ export default async function LocaleLayout({
        <head>
         <meta name="robots" content="noindex" />
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className={`${inter.className} min-h-screen flex flex-col pt-16`}>
         <NextIntlClientProvider>
             <Navbar />
-            <main className="flex-grow flex flex-col pt-16">
               {children}
-            </main>
             <Footer />
             <ContactWidget />
         </NextIntlClientProvider>

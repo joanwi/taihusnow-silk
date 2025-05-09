@@ -78,7 +78,7 @@ const faqs = [
 
 export default function WinterPage() {
   return (
-    <>
+    <main>    
       {/* Hero Section */}
       <section className="relative h-[700px] flex items-center">
         <div className="absolute inset-0">
@@ -369,6 +369,6 @@ export default function WinterPage() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
