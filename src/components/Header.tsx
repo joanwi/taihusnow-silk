@@ -38,10 +38,7 @@ export default function Header() {
   const supportItems = [
     { label: 'About Us', href: '/about-us' },
     { label: 'Sustainability', href: '/sustainability' },
-    { label: 'Oeko-Tex', href: '/silk-quality/oeko-tex' },
-    { label: 'Grade 6A Certification', href: '/silk-quality/grade-6a-certification' },
-    { label: 'How to Check Authenticity', href: '/silk-quality/how-to-check-authenticity' },
-    { label: 'Silk Testing Methods', href: '/silk-quality/silk-testing-methods' },
+    { label: 'Silk Quality', href: '/silk-quality' },
   ];
 
   const blogItems = [
