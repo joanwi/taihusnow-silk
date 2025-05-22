@@ -6,7 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
 
-export default function Navbar() {
+export default function Header() {
   const t = useTranslations('navigation');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -27,10 +27,29 @@ export default function Navbar() {
     { label: '13-Custom Silk Throw Blanket', href: '/products/custom-silk-throw-blanket'},
   ];
 
-  const howtoItems = [
-    { label: 'Manufacturing', href: '/manufacturing' },
-    { label: 'Quality Control', href: '/quality-control' },
-    { label: 'Certifications', href: '/certifications' },
+  const wholesaleItems = [
+    { label: 'Silk Duvet Manufacturer', href: '/wholesale/silk-duvet-manufacturer' },
+    { label: 'Private Label Silk Bedding', href: '/wholesale/private-label-silk-bedding' },
+    { label: 'OEM/ODM Silk', href: '/wholesale/oem-odm-silk' },
+    { label: 'Minimum Order Quantities', href: '/wholesale/minimum-order-quantities' },
+    { label: 'Silk Production Process', href: '/wholesale/silk-production-process' },
+  ];
+
+  const supportItems = [
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Sustainability', href: '/sustainability' },
+    { label: 'Oeko-Tex', href: '/silk-quality/oeko-tex' },
+    { label: 'Grade 6A Certification', href: '/silk-quality/grade-6a-certification' },
+    { label: 'How to Check Authenticity', href: '/silk-quality/how-to-check-authenticity' },
+    { label: 'Silk Testing Methods', href: '/silk-quality/silk-testing-methods' },
+  ];
+
+  const blogItems = [
+    { label: 'News', href: '/news' },
+    { label: 'Guides', href: '/guides' },
+    { label: 'Silk Materials', href: '/silk-materials' },
+    { label: 'Silk Care', href: '/silk-care' },
+    { label: 'Compare', href: '/compare' },
   ];
 
   return (
@@ -43,36 +62,41 @@ export default function Navbar() {
             </Link>
           </div>
           
-          {/* 桌面端导航 */}
+          {/* desktop navigation */}
           <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
             <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
               {t('home')}
             </Link>
-            <Link href="/about-us" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</Link>
             <DropdownMenu
               label={t('products')}
               items={productItems}
               linkColor="text-gray-600 hover:text-gray-900"
             />
-            <DropdownMenu
-              label='How to custom'
-              items={howtoItems}
+             <DropdownMenu
+              label= "Wholesale"
+              items={wholesaleItems}
               linkColor="text-gray-600 hover:text-gray-900"
             />
-            <Link href="/wholesale" className="text-gray-600 hover:text-gray-900 transition-colors">Wholesale</Link>
+             <DropdownMenu
+              label= "Support"
+              items={supportItems}
+              linkColor="text-gray-600 hover:text-gray-900"
+            />
             <Link href="/contact-us" className="text-gray-600 hover:text-gray-900 transition-colors">
-              {t('contact')}
+              Contact Us
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-              {t('blog')}
-            </Link>
+            <DropdownMenu
+              label= "Blog"
+              items={blogItems}
+              linkColor="text-gray-600 hover:text-gray-900"
+            />
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher scrolled={true} />
           </div>
           
-          {/* 移动端菜单按钮 */}
+          {/* mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -85,7 +109,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 移动端下拉菜单 */}
+        {/* mobile dropdown menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 w-full bg-white shadow-lg rounded-b-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
@@ -115,10 +139,10 @@ export default function Navbar() {
               </div>
               <div className="px-3 py-2">
                 <div className="text-base font-medium text-gray-600 hover:text-gray-900">
-                  How to custom
+                    Support
                 </div>
                 <div className="mt-2 space-y-1">
-                  {howtoItems.map((item) => (
+                  {supportItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

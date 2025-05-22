@@ -20,18 +20,18 @@ export default function AboutUsPage() {
 
       {/* Our Story Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Our Story</h2>
-          <p className="text-center text-gray-500 mb-12">A journey of excellence in the textile industry since 1995</p>
-            <p className="text-gray-600 mb-6">
-              Founded in 1995 in Suzhou, The historic center of China's silk industry. With our years of manufacturing technology in premium quality silk products and excellent service, we have grown into a leading global manufacturer and supplier.
-            </p>
-            <p className="text-gray-600 mb-6">
-              With over 25 years of experience, we combine traditional craftsmanship with modern technology to create masterpieces all products that meet the highest standards. Our state-of-the-art facility spans over 10,000 square meters and employs more than 200 skilled workers dedicated to quality and innovation.
-            </p>
-            <p className="text-gray-600">
-              Our products are distributed to over 100 countries worldwide, with a strong presence in North America, Europe, Japan, South Korea, and Australia. We pride ourselves on being a trusted supplier to luxury hotels, high-end retailers, and discerning individual customers worldwide.
-            </p>
+        <div className="container prose md:prose-lg mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 >Our Story</h2>
+          <p>A journey of excellence in the textile industry since 1995</p>
+          <p >
+            Founded in 1995 in Suzhou, The historic center of China's silk industry. With our years of manufacturing technology in premium quality silk products and excellent service, we have grown into a leading global manufacturer and supplier.
+          </p>
+          <p >
+            With over 25 years of experience, we combine traditional craftsmanship with modern technology to create masterpieces all products that meet the highest standards. Our state-of-the-art facility spans over 10,000 square meters and employs more than 200 skilled workers dedicated to quality and innovation.
+          </p>
+          <p>
+            Our products are distributed to over 100 countries worldwide, with a strong presence in North America, Europe, Japan, South Korea, and Australia. We pride ourselves on being a trusted supplier to luxury hotels, high-end retailers, and discerning individual customers worldwide.
+          </p>
         </div>
       </section>
 

@@ -2,7 +2,7 @@ import './globals.css';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { redirect } from 'next/navigation';
-import Navbar from '@/components/Navbar';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactWidget from '@/components/ContactWidget';
 import { Inter } from 'next/font/google';
@@ -40,7 +40,7 @@ export default async function LocaleLayout({
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col pt-16`}>
         <NextIntlClientProvider>
-            <Navbar />
+            <Header />
               {children}
             <Footer />
             <ContactWidget />
