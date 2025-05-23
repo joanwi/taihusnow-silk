@@ -14,7 +14,7 @@ export default function BlogLayout({
   ];
 
   return (
-    <div className="container min-h-96 mx-auto p-4">
+    <div className="container min-h-96 mx-auto px-4 pt-20">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar Navigation */}
        <AsideNav items={blogPages} />

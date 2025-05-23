@@ -76,9 +76,7 @@ export default function SummerDuvet() {
   return (
     <main>
       {/* Product Header Section */}
-      <section className="px-4 py-8 md:px-8">
-        <ProductInfo product={productData} />
-      </section>
+      <ProductInfo product={productData} />
 
       {/* Anchor Navigation */}
       <AnchorNav sections={sections} />

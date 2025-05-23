@@ -46,7 +46,7 @@ export default function DropdownMenu({ label, items, linkColor }: DropdownMenuPr
         <div className={`
           relative
           w-56 rounded-lg
-          bg-primary/95 backdrop-blur-md
+          bg-primary/80 backdrop-blur-md
           shadow-lg shadow-primary/20
           transition-all duration-200 transform origin-top
           ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
@@ -57,7 +57,7 @@ export default function DropdownMenu({ label, items, linkColor }: DropdownMenuPr
             aria-orientation="vertical"
           >
             {/* 顶部小三角 */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-primary/95"></div>
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-primary/80"></div>
             
             {items.map((item, index) => (
               <Link

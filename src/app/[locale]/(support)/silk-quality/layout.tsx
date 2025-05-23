@@ -13,7 +13,7 @@ export default function SilkQualityLayout({
   ];
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto px-4 pt-20">
       <h1 className="text-2xl font-bold mb-6">Silk Quality</h1>
       
       <div className="grid gap-4 md:grid-cols-4 mb-8">

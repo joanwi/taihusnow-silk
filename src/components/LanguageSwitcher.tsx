@@ -22,14 +22,14 @@ export default function LanguageSwitcher({ scrolled = false }: LanguageSwitcherP
       <select 
         className={`border rounded px-3 py-1.5 pr-8 appearance-none cursor-pointer text-sm font-medium focus:outline-none ${
           scrolled 
-            ? 'bg-primary text-secondary border-secondary/30 hover:border-secondary/70 focus:ring-2 focus:ring-secondary/50'
-            : 'bg-primary text-secondary border-secondary/30 hover:border-secondary/70 focus:ring-2 focus:ring-secondary/50'
+            ? 'bg-primary/60 text-secondary border-secondary/30 hover:border-secondary/70 focus:ring-2 focus:ring-secondary/50'
+            : 'bg-primary/60 text-secondary border-secondary/30 hover:border-secondary/70 focus:ring-2 focus:ring-secondary/50'
         }`}
         value={locale}
         onChange={handleChange}
       >
-        <option value="en" className="bg-primary text-secondary">English</option>
-        <option value="zh" className="bg-primary text-secondary">简体中文</option>
+        <option value="en" className="bg-primary/60 text-secondary">English</option>
+        <option value="zh" className="bg-primary/60 text-secondary">简体中文</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
         <svg className="h-4 w-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

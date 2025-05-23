@@ -38,7 +38,7 @@ export default async function LocaleLayout({
        <head>
         <meta name="robots" content="noindex" />
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col pt-16`}>
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
         <NextIntlClientProvider>
             <Header />
               {children}
