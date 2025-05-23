@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { AsideNav } from '@/components/AsideNav';
 
 export default function BlogLayout({
   children,
@@ -14,26 +14,10 @@ export default function BlogLayout({
   ];
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container min-h-96 mx-auto p-4">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar Navigation */}
-        <aside className="w-full md:w-64 shrink-0">
-          <nav className="sticky top-4">
-            <h2 className="text-xl font-bold mb-4">Blog</h2>
-            <ul className="space-y-2">
-              {blogPages.map((page) => (
-                <li key={page.href}>
-                  <Link 
-                    href={page.href}
-                    className="block p-2 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    {page.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </aside>
+       <AsideNav items={blogPages} />
 
         {/* Main Content */}
         <main className="flex-1">

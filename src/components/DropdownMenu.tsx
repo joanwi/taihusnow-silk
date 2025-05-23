@@ -22,7 +22,7 @@ export default function DropdownMenu({ label, items, linkColor }: DropdownMenuPr
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
-        className={`${linkColor} transition-colors flex items-center cursor-pointer`}
+        className={`${linkColor} transition-colors duration-900 h-16 px-4 flex items-center cursor-pointer`}
       >
         {label}
         <svg
@@ -46,8 +46,8 @@ export default function DropdownMenu({ label, items, linkColor }: DropdownMenuPr
         <div className={`
           relative
           w-56 rounded-lg
-          bg-white/90 backdrop-blur-md
-          shadow-lg shadow-gray-200/50
+          bg-primary/95 backdrop-blur-md
+          shadow-lg shadow-primary/20
           transition-all duration-200 transform origin-top
           ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
         `}>
@@ -57,13 +57,13 @@ export default function DropdownMenu({ label, items, linkColor }: DropdownMenuPr
             aria-orientation="vertical"
           >
             {/* 顶部小三角 */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-white/90"></div>
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-primary/95"></div>
             
             {items.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
-                className="block px-6 py-2.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50/80 transition-colors"
+                className="block px-6 py-2.5 text-sm text-secondary hover:text-primary hover:bg-secondary transition-colors"
                 role="menuitem"
               >
                 {item.label}
