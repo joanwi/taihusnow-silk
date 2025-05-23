@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import { ContactButton } from '@/components/ContactButton';
-import ProductsBreadcrumb from '@/components/ProductsBreadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function SilkDuvetManufacturer() {
   const advantages = [
@@ -67,10 +67,7 @@ export default function SilkDuvetManufacturer() {
 
   return (
     <>
-      <ProductsBreadcrumb items={[
-        { label: 'Wholesale', href: '/wholesale' },
-        { label: 'Silk Duvet Manufacturer', isCurrent: true },  
-      ]} />
+      <Breadcrumb items={[{ label: 'Wholesale', href: '/wholesale' }, { label: 'Silk Duvet Manufacturer', isCurrent: true }]} />
       <section className="space-y-4">
         <h1 className="text-3xl font-bold">Your Trusted Partner for Premium Silk Duvets</h1>
         <p className="text-gray-600 max-w-3xl">

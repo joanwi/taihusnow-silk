@@ -1,7 +1,8 @@
 'use client';
 
+import React from 'react';
+import {Link} from '@/i18n/navigation';
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function ContactWidget() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);

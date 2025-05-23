@@ -1,13 +1,10 @@
 import { ContactButton } from '@/components/ContactButton';
-import ProductsBreadcrumb from '@/components/ProductsBreadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function MinimumOrderQuantities() {
   return (
     <>
-      <ProductsBreadcrumb items={[
-        { label: 'Wholesale', href: '/wholesale' },
-        { label: 'Minimum Order Quantities', isCurrent: true },  
-      ]} />
+      <Breadcrumb items={[{ label: 'Wholesale', href: '/wholesale' }, { label: 'Minimum Order Quantities', isCurrent: true }]} />
       <section className="space-y-4">
         <h1 className="text-3xl font-bold">Minimum Order Quantities</h1>
         <p className="text-gray-600">

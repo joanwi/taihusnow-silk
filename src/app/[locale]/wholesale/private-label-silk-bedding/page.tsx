@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import { ContactButton } from '@/components/ContactButton';
-import ProductsBreadcrumb from '@/components/ProductsBreadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function PrivateLabelSilkBedding() {
   const services = [
@@ -62,10 +62,7 @@ export default function PrivateLabelSilkBedding() {
 
   return (
     <>
-      <ProductsBreadcrumb items={[
-        { label: 'Wholesale', href: '/wholesale' },
-        { label: 'Private Label Silk Bedding', isCurrent: true },  
-      ]} />
+      <Breadcrumb items={[{ label: 'Wholesale', href: '/wholesale' }, { label: 'Private Label Silk Bedding', isCurrent: true }]} />
       <section className="space-y-4">
         <h1 className="text-3xl font-bold">Build Your Brand with Taihu Silk</h1>
         <p className="text-gray-600 max-w-3xl">

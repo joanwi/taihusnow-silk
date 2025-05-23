@@ -10,7 +10,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { QuoteButton } from "../QuoteButton";
-import ProductsBreadcrumb from "@/components/ProductsBreadcrumb";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export interface Product {
   title: string;
@@ -56,7 +56,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
 
   return (
     <div className="px-4 pt-24">
-      <ProductsBreadcrumb items={[
+      <Breadcrumb items={[
         { label: 'Products', href: '/products' },
         { label: product.title, isCurrent: true },
       ]} />

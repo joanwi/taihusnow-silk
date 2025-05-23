@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { useTranslations } from 'next-intl'
 import ProductFilter from '@/components/product/ProductFilter'
-import ProductsBreadcrumb from '@/components/ProductsBreadcrumb'
+import ProductsBreadcrumb from '@/components/Breadcrumb'
 
 export default function ProductsPage() {
   const t = useTranslations('products')
